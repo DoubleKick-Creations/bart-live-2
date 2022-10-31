@@ -1,0 +1,24 @@
+.centered {
+    margin: 0 auto;
+    text-align: left;
+    width: 800px;
+}
+
+a { text-decoration: none; }
+
+a:link { color: black; } // unvisited link
+a:visited { color: black; } // visited link
+a:hover {
+	cursor: pointer;
+	color: #FFFFFF; //or gray? #999999
+}  // mouse over link
+
+ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+li {
+	line-height: 0px;
+}

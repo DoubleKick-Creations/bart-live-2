@@ -1,11 +1,11 @@
 <%= turbo_frame_tag(@station.abbr) do %>
-  <div id="TimesView" class="bubble">
+  <div id=<%="#{@station.abbr}MinutesView"%> class="bubble">
 
     <% pp data = get_station_data(@station.abbr) %>
 
     <div class="stationTitleContainer">
       <div class="stationTitle"> <h4> <%= data['root']['station']['name'] %> </h4> </div>
-      <div class="closeLink"> <a>&times;</a> </div>
+      <div class="closeLink"> <a onclick="document.getElementById('<%="#{@station.abbr}MinutesView"%>').remove();">&times;</a> </div>
     </div>
 
     <% unless data['root']['message'] %>
@@ -43,5 +43,5 @@
     <div class="toggleLink"> <a>format</a> </div>
   </div>
 
-  <%= link_to @station.name, station_path(id: @station.abbr, time: 'minutes'), id: "station_" + @station.id.to_s, class: "stationLink" %>
+  <%= link_to @station.name, station_path(id: @station.abbr, time: 'minutes'), class: "stationLink" %>
 <% end %>

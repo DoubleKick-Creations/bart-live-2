@@ -40,7 +40,7 @@ Station.create([
   { abbr: 'rich', name: 'Richmond' },
   { abbr: 'rock', name: 'Rockridge' },
   { abbr: 'sbrn', name: 'San Bruno' },
-  { abbr: 'sfia', name: 'SF Intl Airport' },
+  { abbr: 'sfia', name: 'SFO Intl Airport' },
   { abbr: 'sanl', name: 'San Leandro' },
   { abbr: 'shay', name: 'South Hayward' },
   { abbr: 'ssan', name: 'South San Francisco' },

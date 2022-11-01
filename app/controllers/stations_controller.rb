@@ -4,6 +4,10 @@ class StationsController < ApplicationController
   end
 
   def show
-    @station = Station.find(params[:id])
+    pp request.params
+    @station = Station.find_by_abbr(params[:id])
+    #empty divs for appending?
+    #pass time format as param?
+    # station bubble font
   end
 end

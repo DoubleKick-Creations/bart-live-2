@@ -1,0 +1,117 @@
+
+.bubble {
+	font-family: helvetica;
+	font-size: 1em;
+	position: absolute;
+	bottom: 28px; // Moves bubble up and down
+	left: -25px; //Perfect!!! Moves bubble side to side, was 20px
+	z-index: 10;
+	width: 290px;
+	//removed height so div would size dynamically
+	padding-top: 5px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 0px;
+	background: #B1DFFF;  //background color e6e6e6
+	border: #009ADA solid 2px; //007FFF 4px? blue #0099CC
+	opacity:0.92;
+	filter:alpha(opacity=92);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	line-height: 20px;	
+}
+
+.bubble:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 14%;  // 3px greater than "before" or 0.4% more, moves pointer side to side
+	border-style: solid;
+	border-width: 25px 15px 0;
+	border-color: #B1DFFF transparent; //background color e6e6e6
+	display: block;
+	width: 0;
+	z-index: 10;
+}
+
+.bubble:before {
+	content: "";
+	position: absolute;
+	bottom: -28px;
+	left: 13%;  // 3px less than "after" or 0.8% less
+	border-style: solid;
+	border-width: 28px 18px 0;
+	border-color: #009ADA transparent;  // border color
+	display: block;
+	width: 0;
+	z-index: 0;
+}
+
+.spinnerContainer {	
+}
+
+.stationTitleContainer { 
+	 padding-right:40px;
+	 margin-bottom:5px;
+ }
+ 
+.stationTitle {
+ 	display: inline;
+ 	h4 {
+		display: inline;
+ 		text-align: left;
+ 		line-height: 15px;
+ 	}
+ }
+
+.closeLink {
+	position: absolute;
+	top: 2px;
+	right: 5px;
+	a { 
+		color: black; 
+		font-family: futura;
+		font-size: x-large;
+	}
+	a:hover {
+		color: white;
+		font-size: x-large;
+	};
+	a:active { 
+		color: black;
+	}  /* selected link */
+}
+
+.toggleLink {
+	position: absolute;
+	bottom: 0px;
+	right: 4px;
+	a { 
+		font-size: 1em;
+		color: black; 
+		font-family: futura;
+	}
+	a:hover {
+		color: white;
+		font-size: 1em;
+	};
+	a:active { 
+		color: black;
+	}  /* selected link unicode watch character &#8986; */
+}
+
+.currentTime {
+	padding-top: 5px;
+	margin-top: 0px;
+	font-family: futura;
+	font-size: smaller;
+	text-align: center;
+	line-height: 14px;
+}
+
+.loadMessage {
+	font-weight: bold;
+	text-align: center;
+	line-height: 15px;
+}

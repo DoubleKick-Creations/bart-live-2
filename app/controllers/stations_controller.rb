@@ -10,4 +10,8 @@ class StationsController < ApplicationController
     #pass time format as param?
     # station bubble font
   end
+
+  def remove
+    @station = Station.find_by_abbr(params[:id])
+  end
 end

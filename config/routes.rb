@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :stations, only: [:index]
-  resources :stations, path: 'station/:time', only: [:show]
+  resources :stations, path: 'station/:time', only: [:show, :destroy]
+  get '/stations/:id/remove', to: 'patients#remove'
 
   # resources :users ,only: [:create, :update, :destroy]
   # resources :reminders, only: [:index, :create, :destroy]

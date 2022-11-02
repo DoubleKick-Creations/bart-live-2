@@ -1,11 +1,12 @@
 <%= turbo_frame_tag(@station.abbr) do %>
-  <div id=<%="#{@station.abbr}MinutesView"%> class="bubble">
+  <% bubbleId = "#{@station.abbr}MinutesView" %>
 
-    <% pp data = get_station_data(@station.abbr) %>
+  <div id=<%= bubbleId %> class="bubble">
+    <% data = get_station_data(@station.abbr) %>
 
     <div class="stationTitleContainer">
       <div class="stationTitle"> <h4> <%= data['root']['station']['name'] %> </h4> </div>
-      <div class="closeLink"> <a onclick="document.getElementById('<%="#{@station.abbr}MinutesView"%>').remove();">&times;</a> </div>
+      <div class="closeLink"> <a onclick="document.getElementById('<%= bubbleId %>').remove();">&times;</a> </div>
     </div>
 
     <% unless data['root']['message'] %>

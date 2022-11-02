@@ -6,7 +6,9 @@
 
     <div class="stationTitleContainer">
       <div class="stationTitle"> <h4> <%= data['root']['station']['name'] %> </h4> </div>
-      <div class="closeLink"> <a onclick="document.getElementById('<%= bubbleId %>').remove();">&times;</a> </div>
+      <div class="closeLink"> 
+        <%= link_to '&times;'.html_safe, remove_station_path(@station.abbr) %>
+      </div>
     </div>
 
     <% unless data['root']['message'] %>

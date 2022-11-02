@@ -8,7 +8,7 @@ class StationsController < ApplicationController
     @station = Station.find_by_abbr(params[:id])
     #empty divs for appending?
     #pass time format as param?
-    # station bubble font
+    # lazy loading with spinner?
   end
 
   def remove

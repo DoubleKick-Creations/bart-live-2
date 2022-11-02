@@ -1,7 +1,5 @@
 <%= turbo_frame_tag(@station.abbr) do %>
-  <% bubbleId = "#{@station.abbr}MinutesView" %>
-
-  <div id=<%= bubbleId %> class="bubble">
+  <div class="stationTooltip">
     <% data = get_station_data(@station.abbr) %>
 
     <div class="stationTitleContainer">

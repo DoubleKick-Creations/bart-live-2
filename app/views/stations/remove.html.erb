@@ -1,3 +1,1 @@
-<%= turbo_frame_tag(@station.abbr) do %>  
-  <%= link_to @station.name, station_path(id: @station.abbr, time: 'minutes'), class: "stationLink" %>
-<% end %>
+<%= turbo_frame_tag(@station.abbr) %>

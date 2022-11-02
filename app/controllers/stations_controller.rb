@@ -9,6 +9,7 @@ class StationsController < ApplicationController
     #empty divs for appending?
     #pass time format as param?
     # lazy loading with spinner?
+    # Hash.from_xml?
   end
 
   def remove

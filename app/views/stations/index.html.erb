@@ -6,9 +6,8 @@
 			<ul id="stationsList">
 			<% @stations.each do |station| %>
 			<li id="station_<%= station.abbr %>">
-        <%= turbo_frame_tag(station.abbr) do %>
-				  <%= link_to station.name, station_path(id: station.abbr, time: 'minutes'), class: "stationLink" %>
-        <% end %>
+				<%= link_to station.name, station_path(id: station.abbr, time: 'minutes'), class: "stationLink", data: { turbo_frame: station.abbr } %>
+        <%= turbo_frame_tag(station.abbr) %>
       </li>
 			<% end %>
 			</ul>

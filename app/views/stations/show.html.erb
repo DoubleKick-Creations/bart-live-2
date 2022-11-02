@@ -1,16 +1,14 @@
 <%= turbo_frame_tag(@station.abbr) do %>
   <div class="stationTooltip">
-    <% data = get_station_data(@station.abbr) %>
-
     <div class="stationTitleContainer">
-      <div class="stationTitle"> <h4> <%= data['root']['station']['name'] %> </h4> </div>
+      <div class="stationTitle"> <h4> <%= @data['root']['station']['name'] %> </h4> </div>
       <div class="closeLink"> 
         <%= link_to '&times;'.html_safe, remove_station_path(@station.abbr) %>
       </div>
     </div>
 
-    <% unless data['root']['message'] %>
-      <% lines = data['root']['station']['etd'] %>
+    <% unless @data['root']['message'] %>
+      <% lines = @data['root']['station']['etd'] %>
       <% lines.each do |line|%>
 
         <span class='train <%=line['estimate'][0]['color'].downcase %>'>
@@ -35,11 +33,11 @@
       <% end %>     
 
     <% else %>
-      <%= data['root']['message'] %>
+      <%= @data['root']['message'] %>
     <% end %>
 
     <div class='currentTime'>
-        Times as of <%= data['root']['time'][0..-4] %>  
+        Times as of <%= @data['root']['time'][0..-4] %>  
     </div>
     <div class="toggleLink"> <a>format</a> </div>
   </div>

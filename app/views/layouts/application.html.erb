@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BartLive2</title>
+    <title>Bart-Live | Interactive Bart Resource </title>
+    <link rel="shortcut icon" href="/assets/bart_live_icon.ico" />
+	  <link rel="image_src" href="/assets/facebook_image_alt.jpg" />
+	  <link rel="apple-touch-icon" href="/assets/bart_icon.png" />
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +15,30 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="wrap">
+		<div id="navbar_container">
+			<%#= render "shared/navbar" %>
+		</div>
+
+		<% flash.each do |key, val| %>
+			<% if key == :success %>
+				<div class="alert alert-success"> 
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					<%= val.join(", ") %> 
+				</div>
+			<% else %>
+				<div class="alert alert-error"> 
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					<%= val.join(", ") %> 
+				</div>
+			<% end %>
+		<% end %>
+		
+		<%= yield %>
+
+  </div>
+
+	<%#= render "shared/footer" %>
+
   </body>
 </html>

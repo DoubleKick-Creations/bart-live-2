@@ -22,7 +22,7 @@
 	line-height: 20px;	
 }
 
-.bubble:after {
+.stationTooltip:after {
 	content: "";
 	position: absolute;
 	bottom: -25px;
@@ -35,7 +35,7 @@
 	z-index: 10;
 }
 
-.bubble:before {
+.stationTooltip:before {
 	content: "";
 	position: absolute;
 	bottom: -28px;

@@ -1,0 +1,28 @@
+<% unless @data['root']['message'] %>
+  <% lines = @data['root']['station']['etd'] %>
+  <% lines.each do |line|%>
+
+    <span class='train <%=line['estimate'][0]['color'].downcase %>'>
+      <%= line['destination'] %>
+    </span>
+    <% times = line['estimate'] %>
+
+    <% times.each_with_index do |time, i| %>
+      <% if time['minutes'] != "Leaving" %>
+          <% if i == times.length - 1 %>
+            <%= time['minutes'] + " min" %>
+          <% else %>
+            <%= time['minutes'] + "," %>
+          <% end %>
+      <% elsif i == times.length - 1  %>
+        <%= "Boarding" %>
+      <% else  %>
+        <%= "Boarding," %>
+      <% end %>
+    <% end %>
+    <br>
+  <% end %>     
+
+<% else %>
+  <%= @data['root']['message'] %>
+<% end %>

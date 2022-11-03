@@ -9,7 +9,7 @@ class StationsController < ApplicationController
     params[:time_format] == "minutes" || params[:time_format] == "clock" || render_404
     @station = Station.find_by_abbr(params[:id]) || render_404
     @data = get_station_data(@station.abbr)
-  
+    render layout: false
     #empty divs for appending?
     #pass time format as param?
     # lazy loading with spinner?

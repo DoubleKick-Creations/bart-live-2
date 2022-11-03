@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :stations, only: [:index]
-  resources :stations, path: 'station/:time', only: [:show, :destroy]
+  resources :stations, path: 'station/:time_format', only: [:show, :destroy]
   get '/stations/:id/remove', to: 'stations#remove', as: "remove_station"
 
   # resources :users ,only: [:create, :update, :destroy]

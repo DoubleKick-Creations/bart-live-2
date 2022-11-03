@@ -6,10 +6,10 @@ class StationsController < ApplicationController
   end
 
   def show
-    #pp request.params
-    @station = Station.find_by_abbr(params[:id])
-    #@data = get_station_data(@station.abbr)
-    @data = mock_data
+    params[:time_format] == "minutes" || params[:time_format] == "clock" || render_404
+    @station = Station.find_by_abbr(params[:id]) || render_404
+    @data = get_station_data(@station.abbr)
+  
     #empty divs for appending?
     #pass time format as param?
     # lazy loading with spinner?

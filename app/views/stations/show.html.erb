@@ -1,7 +1,7 @@
 <%= turbo_frame_tag "id_#{@station.abbr}" do %>
   <div class="stationTooltip">
     <div class="stationTitleContainer">
-      <div class="stationTitle"> <h4> <%= @data['root']['station']['name'] %> </h4> </div>
+      <div class="stationTitle"> <h3> <%= @data['root']['station']['name'] %> </h3> </div>
       <div class="closeLink"> 
         <%= link_to '&times;'.html_safe, remove_station_path(@station.abbr) %>
       </div>
@@ -14,7 +14,11 @@
       Times as of <%= @data['root']['time'][0..-4] %>  
     </div>
     <div class="toggleLink"> 
-      <%= link_to 'format', station_path(id: @station.abbr, time_format: @toggle_format), data: { turbo_frame: "id_#{@station.abbr}" } %>
+      <%= link_to 'format',
+        station_path(id: @station.abbr, 
+        time_format: @toggle_format),
+        data: { turbo_frame: "id_#{@station.abbr}" }
+      %>
     </div>
   </div>
 

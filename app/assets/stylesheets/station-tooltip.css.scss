@@ -3,7 +3,7 @@
 	font-family: helvetica;
 	font-size: 1em;
 	position: absolute;
-	bottom: 35px; // Moves tooltip up and down
+	bottom: 40px; // Moves tooltip up and down
 	left: -25px; // Moves tooltip side to side, was 20px
 	z-index: 10;
 	width: 300px;
@@ -55,7 +55,7 @@
  
 .stationTitle {
  	display: inline;
- 	h4 {
+ 	h3 {
 		display: inline;
  		text-align: left;
  		line-height: 15px;

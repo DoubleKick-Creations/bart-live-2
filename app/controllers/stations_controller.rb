@@ -16,8 +16,7 @@ class StationsController < ApplicationController
       @toggle_format = params[:time_format] == "minutes" ? "clock" : "minutes"
       render layout: false
     end
-    #empty divs for appending?
-    #pass time format as param?
+    # cancel PS and AI trial
     # lazy loading with spinner?
     # Hash.from_xml?
   end

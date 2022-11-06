@@ -10,7 +10,7 @@
 #stationsMap {
 	position: relative;
 	margin: 0 auto;
-	background-image: url('bart-map-no-stations.png');
+	background-image: url('bart-map-with-stations.png');
 	background-repeat: no-repeat;
 	width: 900px;  
 	height: 800px;
@@ -40,7 +40,7 @@
 #linkContainer {
 	position: relative;
 	margin: 0 auto;
-	width: 960px;  
+	width: 900px;  
 	height: 800px;
 	z-index: 1;	
 }
@@ -92,8 +92,8 @@
 
 #station_antc { 
 	position: absolute; 
-	top: 1%;
-	left: 83.6%;
+	top: 0.9%;
+	left: 89.2%;
 	.stationLink {
 		letter-spacing: -0.02em;
 		font-size: 1.2em;

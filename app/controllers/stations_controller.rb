@@ -16,7 +16,10 @@ class StationsController < ApplicationController
       @toggle_format = flip_format(params[:time_format])
       render layout: false
     end
-    # lazy loading with spinner?
+    # lazy loading stations turbo_frame_tag id_station_<abbr> nested inside spinner turbo_frame_tag id_spinner_<abbr>?
+    # reload entire index in turbo frame to remove multip open station tooltips?
+    # media queries
+    # bootstrap for modals accordians and possibly close buttons
   end
 
   def remove

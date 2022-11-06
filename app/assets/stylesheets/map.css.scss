@@ -10,7 +10,7 @@
 #stationsMap {
 	position: relative;
 	margin: 0 auto;
-	background-image: url('bart-map-with-stations.png');
+	background-image: url('bart-map-no-stations.png');
 	background-repeat: no-repeat;
 	width: 900px;  
 	height: 800px;
@@ -56,8 +56,8 @@
 
 #station_12th { 
 	position: absolute; 
-	top: 44%;
-	left: 41.8%;
+	top: 31.7%;
+  left: 38.6%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -65,8 +65,8 @@
 
 #station_16th { 
 	position: absolute; 
-	top: 56.7%;
-	left: 7.7%;
+	top: 43.2%;
+  left: 7.6%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -74,8 +74,8 @@
 
 #station_19th { 
 	position: absolute; 
-	top: 41%;
-	left: 42%;
+	top: 28.9%;
+  left: 38.7%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -83,8 +83,8 @@
 
 #station_24th { 
 	position: absolute; 
-	top: 58.7%;
-	left: 6.7%;
+	top: 45%;
+  left: 6.5%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -111,8 +111,8 @@
 
 #station_balb { 
 	position: absolute; 
-	top: 62.5%;
-	left: 6.7%;
+	top: 48.6%;
+  left: 6%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -120,8 +120,8 @@
 
 #station_bayf { 
 	position: absolute; 
-	top: 66%;
-	left: 55.5%;
+	top: 51%;
+  left: 50.3%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -150,8 +150,8 @@
 
 #station_civc { 
 	position: absolute; 
-	top: 54.9%;
-	left: 11.1%;
+	top: 41.5%;
+  left: 4.9%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -159,8 +159,8 @@
 
 #station_cols { 
 	position: absolute; 
-	top: 58.9%;
-	left: 49.5%;
+	top: 44.7%;
+  left: 45.2%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -168,8 +168,8 @@
 
 #station_colm { 
 	position: absolute; 
-	top: 71%;
-	left: 10.4%;
+	top: 56.4%;
+  left: 9.3%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -177,8 +177,8 @@
 
 #station_conc { 
 	position: absolute; 
-	top: 16.6%;
-	left: 69.6%;
+	top: 10%;
+	left: 59.4%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -223,19 +223,10 @@
 	}
 } 
 
-#station_plza { 
-	position: absolute; 
-	top: 16%;
-  left: 22%;
-	.stationLink {
-		font-size: 0.7em;
-	}
-} 
-
 #station_embr { 
 	position: absolute; 
-	top: 49.4%;
-	left: 13.1%;
+	top: 36.6%;
+  left: 12%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -252,8 +243,8 @@
 
 #station_ftvl { 
 	position: absolute; 
-	top: 55.3%;
-	left: 46.6%;
+	top: 41.3%;
+  left: 42.4%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -261,8 +252,8 @@
 
 #station_glen { 
 	position: absolute; 
-	top: 60.6%;
-	left: 9.3%;
+	top: 46.8%;
+  left: 8.1%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -270,8 +261,8 @@
 
 #station_hayw { 
 	position: absolute; 
-	top: 77.4%;
-	left: 52.8%;
+	top: 59.4%;
+  left: 55.5%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -279,8 +270,8 @@
 
 #station_lafy { 
 	position: absolute; 
-	top: 27.5%;
-	left: 54.9%;
+	top: 18.3%;
+  left: 48.3%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -288,8 +279,8 @@
 
 #station_lake { 
 	position: absolute; 
-	top: 51.6%;
-	left: 43.9%;
+	top: 38.3%;
+  left: 40.1%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -297,8 +288,8 @@
 
 #station_mcar { 
 	position: absolute; 
-	top: 38%;
-	left: 42.2%;
+	top: 26.4%;
+  left: 38.8%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -325,8 +316,8 @@
 
 #station_mont { 
 	position: absolute; 
-	top: 51.2%;
-	left: 10.5%;
+	top: 38.2%;
+  left: 10.1%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -351,9 +342,9 @@
 } 
 
 #station_orin { 
-	position: absolute; 
-	top: 31%;
-	left: 50%;
+	position: absolute;
+	top: 21%;
+  left: 44.5%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -361,7 +352,7 @@
 
 #station_oakl { 
 	position: absolute; 
-	top: 54.6%;
+	top: 53%;
 	left: 35%;
 	.stationLink {
 		font-size: 0.9em;
@@ -390,8 +381,17 @@
 
 #station_phil { 
 	position: absolute; 
-	top: 20.1%;
-	left: 65%;
+	top: 12.7%;
+  left: 56%;
+	.stationLink {
+		font-size: 0.7em;
+	}
+} 
+
+#station_plza { 
+	position: absolute; 
+	top: 16%;
+  left: 22%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -399,8 +399,8 @@
 
 #station_powl { 
 	position: absolute; 
-	top: 53.1%;
-	left: 13.6%;
+	top: 39.8%;
+  left: 12.2%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -418,8 +418,8 @@
 
 #station_rock { 
 	position: absolute; 
-	top: 34.7%;
-	left:45.1%;
+	top: 23.8%;
+  left: 40.9%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -454,8 +454,8 @@
 
 #station_shay { 
 	position: absolute; 
-	top: 83.2%;
-	left: 53.2%;
+	top: 64.3%;
+  left: 59.5%;
 	.stationLink {
 		font-size: 0.7em;
 	}
@@ -463,8 +463,8 @@
 
 #station_ssan { 
 	position: absolute; 
-	top: 74.4%;
-	left: 2.9%;
+	top: 59.7%;
+  left: 4%;
 	.stationLink {
 		font-size: 0.7em;
 	}

@@ -12,8 +12,7 @@ BART_API_KEY = Rails.application.credentials.bart_api_key
         key: BART_API_KEY
       })
 
-    response = HTTParty.get(bart_query).to_json
-    json_response = JSON.parse(response)
+    json_response = HTTParty.get(bart_query)
 
     if json_response['root']['message']
       json_response['root']['message'] = "No trains at this time." 

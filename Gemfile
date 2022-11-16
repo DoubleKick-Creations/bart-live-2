@@ -9,6 +9,9 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+# Use Bootstrap 5 for Navbar, modals and other widgets
+gem "bootstrap"
+
 # Use Postgres as the database for Active Record
 gem "pg"
 

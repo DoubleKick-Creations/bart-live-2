@@ -11,7 +11,7 @@
     <%= render 'clock_format' if @time_format == "clock" %>
 
     <div class='currentTime'>
-      Times as of <%= @data['root']['time'][0..-4] %>  
+      Times as of <%= @time_now.strftime("%l:%M%p") %>  
     </div>
     <div class="toggleLink"> 
       <%= link_to 'format',

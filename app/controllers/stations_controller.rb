@@ -12,8 +12,10 @@ class StationsController < ApplicationController
       render404  
     else
       @data = get_station_data(@station.abbr)
+      @time_now = Time.parse(@data['root']['time'][0..-4])
       @time_format = params[:time_format]
       @toggle_format = flip_format(params[:time_format])
+      
       render layout: false
     end
     # eager load spinner, then lazy load stationTooltip turbo grame nested inside spinner turbo_frame_tag id: spinner?

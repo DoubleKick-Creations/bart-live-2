@@ -9,9 +9,9 @@
 
     <% times.each_with_index do |time, i| %>
       <% if time['minutes'] != "Leaving" %>
-          <% departure_time = Time.parse(@data['root']['time'][0..-4])+ time['minutes'].to_i.minutes %>
+          <% departure_time = @time_now + time['minutes'].to_i.minutes %>
           <% if i == times.length - 1 %>
-            <%= departure_time.strftime("%l:%M") + departure_time.strftime("%P") %>
+            <%= departure_time.strftime("%l:%M%P") %>
           <% else %>
             <%= departure_time.strftime("%l:%M") + "," %>
           <% end %>

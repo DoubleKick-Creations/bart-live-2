@@ -15,7 +15,7 @@ class StationsController < ApplicationController
       @time_now = Time.parse(@data['root']['time'][0..-4])
       @time_format = params[:time_format]
       @toggle_format = flip_format(params[:time_format])
-      
+
       render layout: false
     end
     # eager load spinner, then lazy load stationTooltip turbo grame nested inside spinner turbo_frame_tag id: spinner?
@@ -28,10 +28,6 @@ class StationsController < ApplicationController
     #   document.querySelectorAll(className).forEach(el => { el.remove() });
     # }
     # Conider closing tooltips if clicked outside
-  end
-
-  def remove
-    @station = Station.find_by_abbr(params[:id])
   end
 
   private

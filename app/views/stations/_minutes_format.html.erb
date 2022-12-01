@@ -1,6 +1,6 @@
 <% unless @data['root']['message'] %>
   <% lines = @data['root']['station']['etd'] %>
-  <% lines.each do |line|%>
+  <% lines.each do |line| %>
 
     <span class='train <%=line['estimate'][0]['color'].downcase %>'>
       <%= line['destination'] %>

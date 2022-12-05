@@ -2,9 +2,7 @@
   <div class="stationTooltip">
     <div class="stationTitleContainer">
       <div class="stationTitle"> <h3> <%= @data['root']['station']['name'] %> </h3> </div>
-      <div class="closeLink"> 
-        <%= link_to '&times;'.html_safe, '#' %>
-      </div>
+      <div class="closeLink"> <%= link_to '&times;'.html_safe, '#' %> </div>
     </div>
 
     <%= render 'minutes_format' if @time_format == "minutes" %>
@@ -21,5 +19,4 @@
       %>
     </div>
   </div>
-
 <% end %>

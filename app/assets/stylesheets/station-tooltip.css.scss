@@ -54,11 +54,14 @@
  }
  
 .stationTitle {
+	font-family: helvetica;
  	display: inline;
  	h3 {
 		display: inline;
  		text-align: left;
  		line-height: 15px;
+		font-size: 1.17em;
+		font-weight: bold;
  	}
  }
 

@@ -2,12 +2,20 @@
 <html>
   <head>
     <title>Bart-Live | Interactive Bart Resource </title>
-    <link rel="shortcut icon" href="/assets/bart_live_icon.ico" />
-	  <link rel="image_src" href="/assets/facebook_image_alt.jpg" />
-	  <link rel="apple-touch-icon" href="/assets/bart_icon.png" />
+    <%= favicon_link_tag('bart_live_icon.ico') %>
+		<meta property="og:title" content="Bart-Live | Interactive commuter resource">
+		<meta property="og:site_name" content="Bart Live">
+		<meta property="og:url" content="www.bart-live.com">
+		<meta property="og:description" content="Save time on your Bay Area commute by having Bart arrival times accurate to within 10 seconds!  Roll into the station right as the train arrives every time by having a station arrival board in your pocket, in minutes from now or clock format.  Find the closest station to you at any time, set a home station, create reminders, and more! Check back regularly for new features">
+		<meta property="og:type" content=website>
+		<meta property="og:image" content="/assets/bart_live_logo_new_stroke.png">
+		<meta property="og:image" content="/assets/minutes_example.png">
+		<meta property="og:image" content="/assets/clock_example.png">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
+	  <link rel="apple-touch-icon" href="/assets/bart_icon.png" />
+    
+		<%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -16,29 +24,26 @@
 
   <body>
     <div id="wrap">
-		<div id="navbar_container">
-			<%#= render "shared/navbar" %>
-		</div>
+			<div id="navbar_container">
+				<%#= render "shared/navbar" %>
+			</div>
 
-		<% flash.each do |key, val| %>
-			<% if key == :success %>
-				<div class="alert alert-success"> 
-					<button type="button" class="close" data-dismiss="alert">×</button>
-					<%= val.join(", ") %> 
-				</div>
-			<% else %>
-				<div class="alert alert-error"> 
-					<button type="button" class="close" data-dismiss="alert">×</button>
-					<%= val.join(", ") %> 
-				</div>
-			<% end %>
-		<% end %>
-		
-		<%= yield %>
+			<% flash.each do |key, val| %>
+				<% if key == :success %>
+					<div class="alert alert-success"> 
+						<button type="button" class="close" data-dismiss="alert">×</button>
+						<%= val.join(", ") %> 
+					</div>
+				<% else %>
+					<div class="alert alert-error"> 
+						<button type="button" class="close" data-dismiss="alert">×</button>
+						<%= val.join(", ") %> 
+					</div>
+				<% end %>
+			<% end %>					
 
-  </div>
+			<%= yield %>
 
-	<%#= render "shared/footer" %>
-
-  </body>
+  	</div>
+	</body>
 </html>

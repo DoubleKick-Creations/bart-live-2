@@ -5,7 +5,7 @@
 	bottom: 40px; // Moves tooltip up and down
 	left: -25px; // Moves tooltip side to side, was 20px
 	z-index: 10;
-	width: 340px;
+	width: 360px;
 	//removed height so div would size dynamically
 	padding-top: 5px;
 	padding-bottom: 3px;
@@ -54,11 +54,14 @@
  }
  
 .stationTitle {
+	font-family: helvetica;
  	display: inline;
  	h3 {
 		display: inline;
  		text-align: left;
  		line-height: 15px;
+		font-size: 1.17em;
+		font-weight: bold;
  	}
  }
 

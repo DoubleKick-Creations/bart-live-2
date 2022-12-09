@@ -1,4 +1,4 @@
-<div id="modal_<%= station.abbr %>"  class="stationTooltip">
+<div id="modal_<%= station.abbr %>" data-reveal-target="item" class="stationTooltip hidden">
 	<div class="stationTitleContainer">
 		<div class="stationTitle"> <h3><%= station.name %></h3> </div>
 		<div class="closeLink"> <%= link_to '&times;'.html_safe, '#' %> </div>

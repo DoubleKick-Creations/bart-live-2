@@ -5,8 +5,12 @@
 		<div id="linkContainer">
 			<ul id="stationsList">
 			<% @stations.each do |station| %>
-        <li id=<%= "station_#{station.abbr}" %>>
-					<%= content_tag(:a, simple_format(station.name, {}, wrapper_tag: :span), class: "stationLink") %>
+        <li id=<%= "station_#{station.abbr}" %> data-controller="reveal">
+					<%= content_tag(:a, simple_format(station.name, {}, wrapper_tag: :span), 
+						class: "stationLink", 
+						data: {action: "click->reveal#show" }) 
+					%>
+
 					<%= render 'spinner', station: station %>
         </li>
 			<% end %>
@@ -14,3 +18,4 @@
 		</div>
 	</div>
 </div>
+

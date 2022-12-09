@@ -1,6 +1,10 @@
-<%= turbo_frame_tag "id_#{@station.abbr}", src: station_path(@station.abbr), loading: :lazy do %>
-  <div class="stationTooltip">
-		<div class="closeLink"> <a>&times;</a> </div>
+<div id="modal_<%= station.abbr %>"  class="stationTooltip hidden">
+	<div class="stationTitleContainer">
+		<div class="stationTitle"> <h3><%= station.name %></h3> </div>
+		<div class="closeLink"> <%= link_to '&times;'.html_safe, '#' %> </div>
+	</div>
+		
+	<%= turbo_frame_tag "id_#{station.abbr}", src: station_path(station.abbr, time_format: 'minutes'), loading: :lazy do %>
 		<div id="floatingBarsG">
 			<div class="blockG" id="rotateG_01"></div>
 			<div class="blockG" id="rotateG_02"></div>
@@ -11,8 +15,10 @@
 			<div class="blockG" id="rotateG_07"></div>
 			<div class="blockG" id="rotateG_08"></div>
 		</div> 
+
 		<div> 
-			<p style="text-align:center">Loading times...<p>
-		<div>
-	</div>
-<% end %>
+			<p class="live" style="text-align:center">Loading times...<p>
+		</div>
+	<% end %>
+	
+</div>

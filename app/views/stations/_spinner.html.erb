@@ -5,16 +5,20 @@
 	</div>
 		
 	<%= turbo_frame_tag "id_#{station.abbr}", src: station_path(station.abbr, time_format: 'minutes'), loading: :lazy do %>
-		<div id="floatingBarsG">
-			<div class="blockG" id="rotateG_01"></div>
-			<div class="blockG" id="rotateG_02"></div>
-			<div class="blockG" id="rotateG_03"></div>
-			<div class="blockG" id="rotateG_04"></div>
-			<div class="blockG" id="rotateG_05"></div>
-			<div class="blockG" id="rotateG_06"></div>
-			<div class="blockG" id="rotateG_07"></div>
-			<div class="blockG" id="rotateG_08"></div>
-		</div> 
+		<div class="lds-spinner">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 
 		<div class="loadMessage"> <h3>Loading times...</h3> </div>
 	<% end %>

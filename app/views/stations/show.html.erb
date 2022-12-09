@@ -8,7 +8,8 @@
   <div class="toggleLink"> 
     <%= link_to 'format',
       station_path(id: @station.abbr, time_format: @toggle_format),
-      data: { turbo_frame: "id_#{@station.abbr}" }
+      data: { turbo_frame: "id_#{@station.abbr}" },
+      class: "btn btn-outline-bart-blue"
     %>
   </div>
 <% end %>

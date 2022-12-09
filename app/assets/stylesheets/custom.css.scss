@@ -1,3 +1,11 @@
+// Custom color map
+$custom-colors: (
+  "bart-blue": #009ADA
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
 body { background: #ccedff; }
 
 .centered {

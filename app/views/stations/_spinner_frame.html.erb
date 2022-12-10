@@ -1,0 +1,18 @@
+<%= turbo_frame_tag "spinner_#{station.abbr}", src: station_path(station.abbr, time_format: 'minutes'), loading: :lazy do %>
+		<div class="lds-spinner">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+		<div class="loadMessage"> <h3>Loading times...</h3> </div>
+	<% end %>

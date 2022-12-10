@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "id_#{@station.abbr}"  do %>
+<%= turbo_frame_tag "spinner_#{@station.abbr}"  do %>
   <%= render 'minutes_format' if @time_format == "minutes" %>
   <%= render 'clock_format' if @time_format == "clock" %>
 

@@ -1,0 +1,15 @@
+<li id=<%= "id_#{station.abbr}" %> data-controller="reveal">
+  <%= content_tag(:a, simple_format(station.name, {}, wrapper_tag: :span), 
+    class: "stationLink", 
+    data: { action: "click->reveal#show" }) 
+  %>
+
+  <div id="modal_<%= station.abbr %>" data-reveal-target="item" class="stationTooltip hidden">
+    <div class="stationTitleContainer">
+      <div class="stationTitle"> <h3><%= station.name %></h3> </div>
+      <div class="closeLink"> <%= link_to '&times;'.html_safe, remove_station_path(station.abbr) %> </div>
+    </div>
+      
+    <%= render 'spinner_frame', station: station %>
+  </div>
+</li>

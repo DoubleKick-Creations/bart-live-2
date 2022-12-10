@@ -1,4 +1,12 @@
 @import 'bootstrap/scss/bootstrap';
+$custom-colors: (
+  "bart-background-blue": #ccedff,
+  "bart-light-blue": #009ADA,
+  "bart-royal-blue": #0252dd
+);
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import './custom.css.scss';
 @import './spinner.css.scss';

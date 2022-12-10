@@ -1,9 +1,10 @@
 // Custom color map
 // May need to copy the following 5lines into 'bootstrap/scss/_maps.scss' if format button stops working
 $custom-colors: (
-  "bart-blue": #009ADA
+  "bart-background-blue": #ccedff,
+  "bart-light-blue": #009ADA,
+  "bart-royal-blue": #0252dd
 );
-
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $custom-colors);
 

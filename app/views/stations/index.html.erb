@@ -1,21 +1,14 @@
 <div id="mapContainer">	
 	<div id="stationsMap">
-		<div class="mapText"> Click for <span class="live">live</span> train times</div>
+		<div class="mapText"> 
+			Click for <span class="live">live</span> train times
+		</div>
 
 		<div id="linkContainer">
 			<ul id="stationsList">
-			<% @stations.each do |station| %>
-        <li id="station_<%= station.abbr %>">
-          <%= link_to simple_format(station.name, {}, wrapper_tag: :span),
-						station_path(id: station.abbr, time_format: 'minutes'), 
-						class: "stationLink", 
-						data: { turbo_frame: "id_#{station.abbr}" } 
-					%>
-
-          <%= turbo_frame_tag "id_#{station.abbr}" %>
-        </li>
-			<% end %>
+				<%= render @stations %>
 			</ul>
 		</div>
 	</div>
 </div>
+

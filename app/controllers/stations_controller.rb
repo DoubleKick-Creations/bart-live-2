@@ -18,16 +18,14 @@ class StationsController < ApplicationController
 
       render layout: false
     end
-    # eager load spinner, then lazy load stationTooltip turbo grame nested inside spinner turbo_frame_tag id: spinner?
-    # reload entire index in turbo frame to remove multip open station tooltips?
     # media queries
-    # bootstrap for modals accordians and possibly close buttons
-    # 
-    # JS for removing stationTooltips:
-    # function removeByClass(className) {
-    #   document.querySelectorAll(className).forEach(el => { el.remove() });
-    # }
-    # Conider closing tooltips if clicked outside
+    # Stimulus for removing stationTooltips and/or disabling links when one or two are open?
+    # Closing tooltips if clicked outside?
+  end
+
+  def remove
+    @station = Station.find_by_abbr(params[:id])
+    render layout: false
   end
 
   private

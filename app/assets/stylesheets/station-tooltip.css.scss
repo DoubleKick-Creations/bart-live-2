@@ -60,44 +60,40 @@
 		display: inline;
  		text-align: left;
  		line-height: 15px;
-		font-size: 1.17em;
+		font-size: 1.2em;
 		font-weight: bold;
  	}
  }
 
 .closeLink {
 	position: absolute;
-	top: 2px;
+	top: 5px;
 	right: 5px;
-	a { 
-		color: black; 
+	a {
 		font-family: futura;
-		font-size: x-large;
+		color: black; 
+		font-size: xx-large;
 	}
-	a:hover {
-		color: white;
-		font-size: x-large;
-	};
-	a:active { 
-		color: black;
-	}  /* selected link */
+	a:hover { color: white; }
+	a:active { color: black; }  /* selected link */
 }
 
 .toggleLink {
 	position: absolute;
-	bottom: 0px;
-	right: 4px;
-	a { 
-		font-size: 1em;
-		color: black; 
+	bottom: 2px;
+	right: 3px;
+	a {
+		padding: 0px 4px;
+		font-size: 0.7em; 
 		font-family: futura;
 	}
 	a:hover {
 		color: white;
-		font-size: 1em;
+		font-size: 0.75em;
 	};
 	a:active { 
 		color: black;
+		font-size: 0.75em;
 	}  /* selected link unicode watch character &#8986; */
 }
 
@@ -111,7 +107,14 @@
 }
 
 .loadMessage {
-	font-weight: bold;
-	text-align: center;
-	line-height: 15px;
+	font-family: helvetica;
+ 	h3 {
+		margin-top: 30px;
+ 		text-align: center;
+ 		line-height: 15px;
+		font-size: 1em;
+		font-weight: bold;
+ 	}
 }
+
+.hidden { display: none }

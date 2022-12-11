@@ -1,6 +1,7 @@
+// Custom color override
+$info: #009ADA;
+
 @import 'bootstrap/scss/bootstrap';
-// Hopefully the next line will import my colors
-@import "bootstrap/scss/variables";
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import './custom';
 @import './spinner';

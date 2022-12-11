@@ -12,6 +12,7 @@ class StationsController < ApplicationController
       render404  
     else
       @data = get_station_data(@station.abbr)
+      #data = mock_data
       station = @data['root']['station']['name']
       super_puts station
       @time_now = Time.parse(@data['root']['time'][0..-4])
@@ -23,6 +24,8 @@ class StationsController < ApplicationController
     # media queries
     # Stimulus for removing stationTooltips and/or disabling links when one or two are open?
     # Closing tooltips if clicked outside?
+    # Use loading: '_top', index turbo frame, and/or class/global variable to prevent more than one station to be open at a time.
+    # possibly shoe warning banner when trying to open second frame
   end
 
   def remove

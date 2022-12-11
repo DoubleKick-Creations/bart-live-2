@@ -26,6 +26,7 @@ class StationsController < ApplicationController
     # Closing tooltips if clicked outside?
     # Use loading: '_top', index turbo frame, and/or class/global variable to prevent more than one station to be open at a time.
     # possibly shoe warning banner when trying to open second frame
+    # pure more data in @data hash, ie. @time_now, @time_format, @toggle_format
   end
 
   def remove

@@ -3,7 +3,13 @@
 $custom-colors: (
   "bart-background-blue": #ccedff,
   "bart-light-blue": #009ADA,
-  "bart-royal-blue": #0252dd
+  "bart-royal-blue": #0252dd,
+  "blue-line" : #0099CC,
+  "green-line":  #298A08,  // #99CC66 matches green on map
+  "red-line": #CC3333,
+  "yellow-line": #FFFF22,
+  "orange-line": #ff9933,
+  "white-line": #ffffff,
 );
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $custom-colors);

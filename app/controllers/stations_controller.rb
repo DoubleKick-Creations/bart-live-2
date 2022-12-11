@@ -12,6 +12,7 @@ class StationsController < ApplicationController
       render404  
     else
       @data = get_station_data(@station.abbr)
+      pp @data
       @time_now = Time.parse(@data['root']['time'][0..-4])
       @time_format = params[:time_format]
       @toggle_format = flip_format(params[:time_format])
@@ -33,4 +34,6 @@ class StationsController < ApplicationController
   def flip_format(time_format)
     time_format == "minutes" ? "clock" : "minutes"
   end
+
+
 end

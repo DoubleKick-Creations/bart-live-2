@@ -6,7 +6,7 @@
 
 		<div id="linkContainer">
 			<ul id="stationsList">
-				<%= render @stations %>
+				<%= render partial: 'station_frame', as: 'station', collection: @stations %>
 			</ul>
 		</div>
 	</div>

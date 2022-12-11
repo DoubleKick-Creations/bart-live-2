@@ -78,6 +78,14 @@
 	a:active { color: black; }  /* selected link */
 }
 
+.train {
+	font-size: large;
+	font-weight: bold;
+	letter-spacing: 0px;
+	text-shadow:0 0 1px black;
+ }
+
+
 .toggleLink {
 	position: absolute;
 	bottom: 2px;
@@ -117,4 +125,26 @@
  	}
 }
 
+.blue-line {
+	color: #00aeef;
+}
+
+.green-line {
+	color: #51b848;  
+}
+.red-line {
+	color: #ed1c24;
+}
+
+.orange-line {
+	color: #faa619;
+}
+
+.yellow-line {
+	color: #ffe600;
+}
+
+.white-line {
+	color: #ffffff;
+}
 .hidden { display: none }

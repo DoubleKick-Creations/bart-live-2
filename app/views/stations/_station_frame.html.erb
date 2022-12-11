@@ -9,7 +9,7 @@
     <div id=<%= "tooltip_#{station.abbr}" %> class="stationTooltip hidden" data-reveal-target="item">
       <div class="stationTitleContainer">
         <div class="stationTitle"> 
-          <h3><%= station.name %></h3> 
+          <h3><%= station.name.delete("\n") %></h3> 
         </div>
         <div class="closeLink"> 
           <%= link_to '&times;'.html_safe, remove_station_path(station.abbr) %> 

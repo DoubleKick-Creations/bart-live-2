@@ -37,6 +37,23 @@ BART_API_KEY = Rails.application.credentials.bart_api_key
     response
   end
 
+  def super_puts(message = 'LOOK HERE!!!', symbol = '#', message_padding = 3)
+    message = message.to_s
+    if message.length > 200 - 2 * message_padding || message.lines.count > 1 
+      puts "\n#{symbol * 200}\n\n"
+      pp message.to_s
+      puts "\n#{symbol * 200}\n"
+    else
+      puts <<-MESSAGE
+        \n
+        #{symbol * (message.length + message_padding * 2 + 4)}\n
+        #{symbol * message_padding}  #{message}  #{symbol * message_padding}\n
+        #{symbol * (message.length + message_padding * 2 + 4)}\n
+        \n
+      MESSAGE
+    end
+  end
+
   def mock_data
     {"root"=>
       {"uri"=>"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=embr",

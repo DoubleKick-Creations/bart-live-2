@@ -12,7 +12,8 @@ class StationsController < ApplicationController
       render404  
     else
       @data = get_station_data(@station.abbr)
-      pp @data
+      station = @data['root']['station']['name']
+      super_puts station
       @time_now = Time.parse(@data['root']['time'][0..-4])
       @time_format = params[:time_format]
       @toggle_format = flip_format(params[:time_format])

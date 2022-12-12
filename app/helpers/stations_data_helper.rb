@@ -314,7 +314,10 @@ BART_API_KEY = Rails.application.credentials.bart_api_key
               "bikeflag"=>"1",
               "delay"=>"178",
               "cancelflag"=>"0",
-              "dynamicflag"=>"0"}]}]},
+              "dynamicflag"=>"0"
+            }]
+          }]
+        },
       "message"=>nil}}
   end
 end

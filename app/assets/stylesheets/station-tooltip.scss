@@ -91,7 +91,7 @@
 	bottom: 3px;
 	right: 3px;
 	a {
-		padding: 0px 4px;
+		padding: 0px 3px;
 		font-size: 0.7em; 
 		font-family: futura;
 	}
@@ -103,6 +103,12 @@
 		color: black;
 		font-size: 0.75em;
 	}  /* selected link unicode watch character &#8986; */
+	.bi::before {
+		line-height: 0px;
+		vertical-align: -0.2em;
+		font-size: 1.2em;
+		margin: 0px 3px 0px 0px;
+	}
 }
 
 .currentTime {

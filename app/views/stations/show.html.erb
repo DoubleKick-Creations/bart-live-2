@@ -1,7 +1,7 @@
 <%= turbo_frame_tag "times_frame_#{@station.abbr}" do %>
 
-  <%= render 'minutes_format' if @time_format == "minutes" %>
-  <%= render 'clock_format' if @time_format == "clock" %>
+  <%= render 'stations/formats/minutes' if @time_format == "minutes" %>
+  <%= render 'stations/formats/clock' if @time_format == "clock" %>
 
   <div class='currentTime'>
     Times as of <%= @time_now.strftime("%l:%M:%S%p") %>  

@@ -4,64 +4,103 @@
   <title>These are not the pages you were looking for...</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+
+  .bart-background-blue { color: #ccedff; }
+  .bart-light-blue { color: #009ADA; }
+  .bart-royal-blue { color: #0252dd; }
+
   .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
+    background-color: #ccedff;
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family: futura, sans-serif;
     margin: 0;
   }
 
   .rails-default-error-page div.dialog {
     width: 95%;
     max-width: 33em;
-    margin: 4em auto 0;
+    margin: 20px auto;
   }
 
   .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+    margin: 20px 40px;
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+    line-height: 0.8em;
   }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .radiused {
+    border: #009ADA solid 3.2px;
+    border-radius: 10px;
   }
+  .image_container {
+    margin: 0 auto;
+    width: 860px
+  }
+  .centered { margin: 0 auto }
+
+  .emphasis { 
+    font-size: 1.3em;
+    font-style: italic; 
+  }
+  .fancy_button {
+    width: 100px;
+    display: block;
+    position: relative;
+    background: #0252dd;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px;
+    padding: 0 70px;
+    white-space: nowrap;
+    margin-top: 25px;
+    transition: background 0.5s ease;
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+  .fancy_button:before {
+    content: "";
+    position: absolute;
+    width: auto;
+    height: 100px;
+    background: #fff;
+    bottom: -25px;
+    left: 0;
+    border: 2px solid #fff;
+    transform: translateX(-50px) rotate(45deg);
+    transition: transform 0.5s ease;
+  }
+  .fancy_button:hover {
+    background: transparent;
+    border-color: #fff;
+  }
+  .fancy_button:hover:before {
+    transform: translateX(250px) rotate(45deg);
+  }
+
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
+  <div class="image_container">
+    <a href="http://www.bart-live.com">
+      <img class="centered" src="images/bart-live-logo-new.png">
+    </a>
+    <img class="radiused centered" src="images/ mando-shaking-head.gif">
+  </div>
+  <div class="dialog radiused">
     <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+      <h1 class="bart-royal-blue">This is <span class="emphasis">not</span> the way.</h1>
+      <p class="centered">You may have mistyped the address or the page may have moved. Let's put you back on the right path.</p>
+      <a href="http://www.bart-live.com" class="centered fancy_button"> Go Back</a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>

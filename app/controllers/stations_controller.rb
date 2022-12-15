@@ -8,29 +8,26 @@ class StationsController < ApplicationController
   def show
     @station = Station.find_by_abbr(params[:id])
     
-    unless @station
+    if @station.blank?
       render404  
     else
-      @data = get_station_data(@station.abbr)
-      station_name = @data['root']['station']['name']
-      super_puts station_name
+      @data = get_station_data(@station.abbr) 
       @time_now = Time.parse(@data['root']['time'][0..-4])
       @time_format = params[:time_format]
-      @toggle_format = flip_format(params[:time_format])
-      
-
+      @toggle_format = flip_format(params[:time_format]) 
+      super_puts @data['root']['station']['name'] # Debugging output to know which station is being rendered
       render layout: false
     end
   end
-  # media queries
-  # Stimulus for removing stationTooltips and/or disabling links when one or two are open?
+  # put id="station" or other unique identifier on the open station, look for it in controller, if exists, prevent new station from opening, show warning, etc.
+  # media queries for different viewport sizes and orientations
+  # Stimulus for opening stationTooltips and/or disabling links when trying to open more than one ?
   # Closing tooltips if clicked outside?
-  # Use loading: '_top', index turbo frame, and/or class/global variable to prevent more than one station open at a time.
-  # possibly show warning banner when trying to open second frame
-  # put more data in @data object, ie. @time_now, @time_format, @toggle_format
-  # call remove on any open frames, when new one is clicked, or remove/close all when any new frame is clicked/opened
-  # store number of open stations, or store the abbr for open station in class variable, local store, or cookies?
-  # enhance 'reveal' stimulus controller to handle closing any open stations prior to opening new station
+  # Using @@class variables to prevent more than one station open at a time may be a dead end.
+  # Possibly create and show warning banner when trying to open second station?
+  # Posssibly call removeon more than one open ubject, when new one is clicked, or remove/close all when any new frame is clicked/opened
+  # Store number of open stations, or store the abbr for open station in class variable, local store, or cookies?
+  # enhance 'reveal' stimulus controller to handle closing any open stations prior to opening new station!
 
   def remove
     @station = Station.find_by_abbr(params[:id])
@@ -42,6 +39,5 @@ class StationsController < ApplicationController
   def flip_format(time_format)
     time_format == "minutes" ? "clock" : "minutes"
   end
-
 
 end

@@ -1,24 +1,6 @@
-# README
+# Welcome to Bart-Live 2.0!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-It's a Rails 7 application using the most current version of Ruby 3 designed for Bay area Bart commuters.  It is also keeping my code sharp and improving my skills with the new front-end framework that now ships with Rails 7, called Hotwire (Turbo/Stimulus.js). I've been pleasantly surprised by how easy the libraries are to learn and use, as well as how powerful and performant they are.  I think Turbo/Stimulus may even have the potential to augment React, if not replace React in certain sinstances, but we'll have to wait and see, since these libraries are it's so new by comparison.
+- The application being actively development whenever I have spare time. You can check out my progress at https://bart-live.herokuapp.com or http://wwww.bary-live.com for it's permanent home.  Once it is further along, I will buy the upgrade to Godadday SSL certication, but for now if you prefer a secure connection, just use the first link instead of the second. It is currently on a low cost eco dyno until it gains some tranction.  If/when it does, I will upgrade the hosting as well as add background workers for some of the more advanced features I have already planned out, like text/email reminders containing departures times for the date, time and station of your choice, as well a number of other background features.
+- I tend to deploy features in big chunks, but I try to deploy at least once a week.  Currently, the main map/live departure time feature in both minutes from now and clock time formats is available.  Next will be a Navbar, closest station finder, along with user sign up/authentication.  I have some fun ideas for what users will have access to once logged in, but I don't want to spoil too many of the surprises. 🎉
+- Check back regularly for updates!

@@ -1,12 +1,14 @@
 <%= turbo_frame_tag "station_frame_#{station.abbr}" do %>
-  <li id=<%= "station_#{station.abbr}" %> data-controller="reveal">
+  <li id=<%= "station_#{station.abbr}" %> data-controller="tooltip">
     <%= content_tag(:a, simple_format(station.name, {}, wrapper_tag: :span),
-      id: "a_#{station.abbr}",
       class: "stationLink", 
-      data: { action: "click->reveal#show" }) 
+      data: { action: "click->tooltip#show" }) 
     %>
     
-    <div id=<%= "tooltip_#{station.abbr}" %> class="stationTooltip hidden" data-reveal-target="item">
+    <%= content_tag(:div, id: "tooltip_#{station.abbr}", 
+      class: "stationTooltip hidden", 
+      data: {abbr: station.abbr, "tooltip-target" => "tooltip"}) do %>
+      
       <div class="stationTitleContainer">
         <div class="stationTitle"> 
           <h3><%= station.name.delete("\n") %></h3> 
@@ -17,6 +19,6 @@
       </div>
 
       <%= render 'stations/frames/spinner', station: station %>
-    </div>
+    <% end %>
   </li>
 <% end %>

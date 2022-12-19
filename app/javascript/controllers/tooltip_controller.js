@@ -3,11 +3,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ['tooltip'];
 
-  connect () {
-    this.class = 'stationTooltip';
-  }
+  connect() { this.class = 'stationTooltip'; }
 
-  show () {
+  show() {
+    console.log('STILLONENNINGS')
     for (const tooltip of this.tooltipTargets) {
       // prevent more than one tooltip from being open at the same time, by first closing any previously opened tooltip
       let openTooltips = Array.from(document.querySelectorAll('.openTooltip'));

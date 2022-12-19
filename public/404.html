@@ -39,13 +39,14 @@
     width: 860px
   }
   .centered { margin: 0 auto }
+  .logo { margin: 20px auto }
 
   .emphasis { 
     font-size: 1.3em;
     font-style: italic; 
   }
   .fancy_button {
-    width: 100px;
+    width: 90px;
     display: block;
     position: relative;
     background: #0252dd;
@@ -54,7 +55,7 @@
     height: 50px;
     text-align: center;
     text-decoration: none;
-    color: #fff;
+    color: #000;
     line-height: 50px;
     font-size: 18px;
     padding: 0 70px;
@@ -69,16 +70,16 @@
     position: absolute;
     width: auto;
     height: 100px;
-    background: #fff;
+    background: #000;
     bottom: -25px;
     left: 0;
-    border: 2px solid #fff;
+    border: 2px solid #000;
     transform: translateX(-50px) rotate(45deg);
     transition: transform 0.5s ease;
   }
   .fancy_button:hover {
     background: transparent;
-    border-color: #fff;
+    border-color: #000;
   }
   .fancy_button:hover:before {
     transform: translateX(250px) rotate(45deg);
@@ -91,7 +92,7 @@
   <!-- This file lives in public/404.html -->
   <div class="image_container">
     <a href="http://www.bart-live.com">
-      <img class="centered" src="images/bart-live-logo-new.png">
+      <img class="logo" src="images/bart-live-logo-new.png">
     </a>
     <img class="radiused centered" src="images/ mando-shaking-head.gif">
   </div>

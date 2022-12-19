@@ -8,7 +8,7 @@ class StationsController < ApplicationController
   def show
     @station = Station.find_by_abbr(params[:id])
     
-    unless @station
+    if @station.blank?
       render404  
     else
       @data = get_station_data(@station.abbr)

@@ -8,7 +8,7 @@ class StationsController < ApplicationController
   def show
     @station = Station.find_by_abbr(params[:id])
     
-    unless @station
+    if @station.blank?
       render404  
     else
       @data = get_station_data(@station.abbr)
@@ -21,6 +21,7 @@ class StationsController < ApplicationController
   end
   # media queries to change the appearance for different viewport sizes
   # keeping 'remove' route for now, but may switch close_links to '#' later if doing so doesn't shift the app around too much.
+
 
   def remove
     @station = Station.find_by_abbr(params[:id])

@@ -7,14 +7,18 @@
     
     <%= content_tag(:div, id: "tooltip_#{station.abbr}", 
       class: "stationTooltip hidden", 
-      data: {abbr: station.abbr, "tooltip-target" => "tooltip"}) do %>
+      data: { abbr: station.abbr, "tooltip-target" => "tooltip" }) do 
+    %>
 
       <div class="stationTitleContainer">
         <div class="stationTitle"> 
           <h3><%= station.name.delete("\n") %></h3> 
         </div>
         <div class="closeLink"> 
-          <%= link_to '&times;'.html_safe, root_path, id: "close_#{station.abbr}" %> 
+          <%= link_to '&times;'.html_safe, root_path,
+          id: "close_#{station.abbr}",
+          data: { action: "click->tooltip#hide" }
+        %> 
         </div>
       </div>
 

@@ -8,7 +8,7 @@ export default class extends Controller {
   }
 
   show () {
-    this.tooltipTargets.forEach(tooltip => {
+    for (const tooltip of this.tooltipTargets) {
       // prevent more than one tooltip from being open at the same time, by first closing any previously opened tooltip
       let openTooltips = Array.from(document.querySelectorAll('.openTooltip'));
       if (openTooltips.length >= 1) {
@@ -19,13 +19,13 @@ export default class extends Controller {
       }
       tooltip.classList.remove('hidden');
       tooltip.classList.add('openTooltip');
-    })
+    }
   }
 
   hide() {
-    this.tooltipTargets.forEach(tooltip => {
+    for (const tooltip of this.tooltipTargets) {
       tooltip.classList.add('hidden');
-    })
+    }
   }
 }
 

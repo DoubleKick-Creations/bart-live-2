@@ -10,7 +10,6 @@
     <%= link_to station_path(id: @station.abbr, time_format: @toggle_format),
       data: { turbo_frame: "times_frame_#{@station.abbr}" },
       class: "btn btn-outline-info" do %>
-
         <i class="bi bi-arrow-repeat">format</i>
     <% end %>
   </div>

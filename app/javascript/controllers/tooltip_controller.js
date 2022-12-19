@@ -8,32 +8,26 @@ export default class extends Controller {
   }
 
   show () {
-    this.tooltipTargets.forEach(async tooltip => {
+    this.tooltipTargets.forEach(tooltip => {
       let openTooltips = Array.from(document.querySelectorAll('.openTooltip'));
+      // prevent more than one tooltip from being opened at the same time, adjust this number to allow more than one
       if (openTooltips.length >= 1) {
         let abbr = openTooltips[0].dataset.abbr;
-        // probably don't need to async fetch remove, just don't open another tooltip and show warning, or add overlay with href of remove url so it acts more like a modal
-        let url = `${window.location.href}stations/${abbr}/remove`
-        console.log(`${url}`)
-        let response = await fetch(url);
-        console.log(response)
-      } else {
-        tooltip.classList.remove('hidden');
-        tooltip.classList.add('openTooltip');
+        let openTooltip = document.getElementById(`tooltip_${abbr}`);
+        openTooltip.classList.add('hidden')
+        openTooltip.classList.remove('openTooltip');
       }
+      tooltip.classList.remove('hidden');
+      tooltip.classList.add('openTooltip');
     })
   }
 
   hide() {
     this.tooltipTargets.forEach(tooltip => {
-      tooltip.classList.add("hidden");
+      tooltip.classList.add('hidden');
+      tooltip.classList.remove('openTooltip');
     })
   }
 
-  toggle() {
-    this.tooltipTargets.forEach(tooltip => {
-      tooltip.classList.toggle("hidden");
-    })
-  }
 }
 

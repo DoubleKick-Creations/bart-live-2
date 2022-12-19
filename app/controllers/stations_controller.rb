@@ -20,13 +20,8 @@ class StationsController < ApplicationController
     end
   end
   # media queries to change the appearance for different viewport sizes
-  # keeping 'remove' route for now, but may switch close_links to '#' later if doing so doesn't shift the app around too much.
-
-  def remove
-    @station = Station.find_by_abbr(params[:id])
-    render layout: false
-  end
-
+  # getting rid of remove route by sending 'X' close links to root_url, check 'limit-open-station' branch if rversion is necessary
+  
   private
 
   def flip_format(time_format)

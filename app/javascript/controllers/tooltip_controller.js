@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ['tooltip'];
 
   connect () {
-    this.class = 'stationTooltip'
+    this.class = 'stationTooltip';
   }
 
   show () {
@@ -14,10 +14,17 @@ export default class extends Controller {
       if (openTooltips.length >= 1) {
         let abbr = openTooltips[0].dataset.abbr;
         let closeLink = document.getElementById(`close_${abbr}`);
+        openTooltips[0].classList.add('hidden');
         closeLink.click();
       }
       tooltip.classList.remove('hidden');
       tooltip.classList.add('openTooltip');
+    })
+  }
+
+  hide() {
+    this.tooltipTargets.forEach(tooltip => {
+      tooltip.classList.add('hidden');
     })
   }
 }

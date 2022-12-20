@@ -6,7 +6,6 @@ export default class extends Controller {
   connect() { this.class = 'stationTooltip'; }
 
   show() {
-    console.log('STILLONENNINGS')
     for (const tooltip of this.tooltipTargets) {
       // prevent more than one tooltip from being open at the same time, by first closing any previously opened tooltip
       let openTooltips = Array.from(document.querySelectorAll('.openTooltip'));

@@ -21,6 +21,7 @@ class StationsController < ApplicationController
   end
   # media queries to change the appearance for different viewport sizes
   # getting rid of remove route by sending 'X' close links to root_url, check 'limit-open-station' branch if rversion is necessary
+  # activate user home station (if set), the same wa I clost stations (click event in controller)
   
   private
 

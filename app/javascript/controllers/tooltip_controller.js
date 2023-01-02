@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ['tooltip'];
 
-  connect () { this.class = 'stationTooltip'; }
+  connect = () => this.class = 'stationTooltip';
 
   show () {
     for (const tooltip of this.tooltipTargets) {
@@ -20,7 +20,7 @@ export default class extends Controller {
     }
   }
 
-  hide() { this.tooltipTarget.classList.add('hidden'); }
+  hide = () => this.tooltipTarget.classList.add('hidden');
 
   // Attempt to create a hide method that closes tooltip when background is clicked
   // clickBackground(e) {

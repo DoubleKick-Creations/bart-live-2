@@ -21,20 +21,4 @@ export default class extends Controller {
   }
 
   hide = () => this.tooltipTarget.classList.add('hidden');
-
-  // Attempt to create a hide method that closes tooltip when background is clicked
-  // clickBackground(e) {
-  //   console.log(this.tooltipTargets);
-  //   for (const tooltip of this.tooltipTargets) {
-  //     tooltip.classList.add('hidden');
-  //     let abbr = tooltip.dataset.abbr;
-  //     let closeLink = document.getElementById(`close_${abbr}`);
-  //     if (e && tooltip.contains(e.target) && !closeLink.contains(e.target) ) {
-  //       console.log(tooltip.contains(e.target))
-  //       return;
-  //     } else { 
-  //       closeLink.click();
-  //     }
-  //   }
-  // }
 }

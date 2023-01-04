@@ -1,3 +1,5 @@
+![bart-live-logo-new](https://user-images.githubusercontent.com/5009669/210657308-04c7523c-1423-4d97-9dd5-e1639f920330.png)
+<br>
 # Welcome to Bart-Live 2.0!
 
 - This is a Rails 7 application using the most current version of Ruby 3, designed for Bay area Bart commuters. The inspiration for this project came from a desire to spend less time waiting for Bart trains and more time on everything else.  I have been able to use it to consistently walk into any Bart Station right as the train was pulling up.

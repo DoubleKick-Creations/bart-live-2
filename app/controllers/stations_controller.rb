@@ -21,7 +21,9 @@ class StationsController < ApplicationController
   end
   # media queries to change the appearance for different viewport sizes
   # getting rid of remove route by sending 'X' close links to root_url, check 'limit-open-station' branch if reversion is necessary
-  # activate user home station (if set), the same way I open stations (may need new Stimulus home-station-controller)
+  # Activate user home station (if set), the same way I open stations (may need new Stimulus home-station-controller)
+  # Add user authentication using Devise, then allow setting of home station/convenience links
+  
   private
 
   def flip_format(time_format)

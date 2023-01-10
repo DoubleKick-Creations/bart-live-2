@@ -1,18 +1,18 @@
 module StationsDataHelper
-BART_API_KEY = Rails.application.credentials.bart_api_key
+  BART_API_KEY = Rails.application.credentials.bart_api_key
   
-  def get_station_data(abbr)
-    bart_query = Addressable::URI.new(
+  def fetch_bart_data(station)
+    bart_query_uri = Addressable::URI.new(
       scheme: "http",
       host: "api.bart.gov",
       path: "api/etd.aspx",
       query_values: {
         cmd: "etd",
-        orig: abbr,
+        orig: station.abbr,
         key: BART_API_KEY
       })
 
-    response = HTTParty.get(bart_query)
+    response = HTTParty.get(bart_query_uri)
 
     if response['root']['message']
       response['root']['message'] = "No trains at this time." 
@@ -37,6 +37,7 @@ BART_API_KEY = Rails.application.credentials.bart_api_key
     response
   end
 
+  # Custom print debugging method
   def super_puts(message = 'LOOK HERE!!!', symbol = '#', message_padding = 3)
     message = message.to_s
     if message.length > 200 - 2 * message_padding || message.lines.count > 1 
@@ -54,6 +55,7 @@ BART_API_KEY = Rails.application.credentials.bart_api_key
     end
   end
 
+  # Mocked data response for after hours (when no trains are running and there is no data)
   def mock_data
     {"root"=>
       {"uri"=>"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=embr",

@@ -11,7 +11,7 @@ class StationsController < ApplicationController
     if @station.blank? || params[:time_format] != 'minutes' && params[:time_format] != 'clock'
       render404  
     else
-      @data = get_station_data(@station.abbr)
+      @data = mock_data#fetch_bart_data(@station)
       @time_now = Time.parse(@data['root']['time'][0..-4])
       @time_format = params[:time_format]
       @toggle_format = flip_format(params[:time_format])

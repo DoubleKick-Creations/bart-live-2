@@ -12,7 +12,7 @@
 	padding-left: 6px;
 	padding-right: 0px;
 	background: #B1DFFF;  //background color e6e6e6
-	border: #009ADA solid 3.2px; //007FFF 4px? blue #0099CC
+	border: #00aeef solid 3px; //007FFF, #0099CC, 009ADA or line match #00aeef 4px blue 
 	opacity:0.9;
 	filter:alpha(opacity=90);
 	-webkit-border-radius: 10px;
@@ -42,7 +42,7 @@
   left: 45.2%;  // Moves pointer outside side to side, was 13.2%
 	border-style: solid;
 	border-width: 28px 18px 0;
-	border-color: #009ADA transparent;  // border color
+	border-color: #00aeef transparent;  // border color
 	display: block;
 	width: 0;
 	z-index: 9;
@@ -50,7 +50,7 @@
 
 .stationTitleContainer { 
 	 padding-right: 40px;
-	 margin-bottom: 5px;
+	 margin: 2px 0 4px 0;
  }
  
 .stationTitle {
@@ -64,6 +64,11 @@
 		font-weight: bold;
  	}
  }
+
+.underline {
+	text-decoration-line: underline;
+	text-decoration-color: #00aeef;
+}
 
 .closeLink {
 	position: absolute;
@@ -112,8 +117,7 @@
 }
 
 .currentTime {
-	padding-top: 5px;
-	margin-top: 0px;
+	margin-top: 5px;
 	font-family: futura;
 	font-size: smaller;
 	text-align: center;
@@ -132,12 +136,12 @@
 }
 
 .blue-line {
-	color: #00aeef;
+	color: #00aeef; // # Or #009ADA 
 }
-
 .green-line {
 	color: #51b848;  
 }
+
 .red-line {
 	color: #ed1c24;
 }
@@ -147,10 +151,11 @@
 }
 
 .yellow-line {
-	color: #ffe600;
+	color: #FFFF22; // #ffe600 matches map yellow
 }
 
 .white-line {
 	color: #ffffff;
 }
+
 .hidden { display: none }

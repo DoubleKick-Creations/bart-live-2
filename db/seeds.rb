@@ -33,7 +33,7 @@ Station.create([
   { abbr: "ncon", name: "North Concord/Martinez" },
   { abbr: "oakl", name: "Oakland Int'l\n Airport (OAK)" },
   { abbr: "orin", name: "Orinda" },
-  { abbr: "pitt", name: "Pittsburg/\nBay Point" },
+  { abbr: "pitt", name: "Pittsburg \nBay Point" },
   { abbr: "pctr", name: "Pittsburg \nCenter" },
   { abbr: "phil", name: "Pleasant Hill/Contra Costa Center" },
   { abbr: "powl", name: "Powell St." },

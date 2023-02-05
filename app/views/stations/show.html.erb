@@ -1,16 +1,16 @@
 <%= turbo_frame_tag "times_frame_#{@station.abbr}" do %>
 
-  <%= render 'stations/formats/minutes' if @time_format == "minutes" %>
-  <%= render 'stations/formats/clock' if @time_format == "clock" %>
+  <%= render 'stations/formats/minutes' if @time_format == 'minutes' %>
+  <%= render 'stations/formats/clock' if @time_format == 'clock' %>
 
   <div class='currentTime'>
-    Times as of <%= @time_now.strftime("%l:%M:%S%p") %>  
+    Times as of <%= @time_now.strftime('%l:%M:%S%p') %>  
   </div>
-  <div class="toggleLink"> 
+  <div class='toggleLink'> 
     <%= link_to station_path(id: @station.abbr, time_format: @toggle_format),
       data: { turbo_frame: "times_frame_#{@station.abbr}" },
-      class: "btn btn-outline-info" do %>
-        <i class="bi bi-arrow-repeat">format</i>
+      class: 'btn btn-outline-info' do %>
+        <i class='bi bi-arrow-repeat'>format</i>
     <% end %>
   </div>
 <% end %>

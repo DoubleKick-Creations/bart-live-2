@@ -8,17 +8,17 @@
     <% times = line['estimate'] %>
 
     <% times.each_with_index do |time, i| %>
-      <% if time['minutes'] != "Leaving" %>
+      <% if time['minutes'] != 'Leaving' %>
           <% departure_time = @time_now + time['minutes'].to_i.minutes %>
           <% if i == times.length - 1 %>
-            <%= departure_time.strftime("%l:%M%P") %>
+            <%= departure_time.strftime('%l:%M%P') %>
           <% else %>
-            <%= departure_time.strftime("%l:%M") + "," %>
+            <%= departure_time.strftime('%l:%M') + ',' %>
           <% end %>
       <% elsif i == times.length - 1  %>
-        <%= "Boarding" %>
+        <%= 'Boarding' %>
       <% else  %>
-        <%= "Boarding," %>
+        <%= 'Boarding,' %>
       <% end %>
     <% end %>
     <br>

@@ -1,23 +1,23 @@
 <%= turbo_frame_tag "station_frame_#{station.abbr}" do %>
-  <li id=<%= "station_#{station.abbr}" %> data-controller="tooltip">
+  <li id=<%= "station_#{station.abbr}" %> data-controller='tooltip'>
     <%= content_tag(:a, simple_format(station.name, {}, wrapper_tag: :span),
-      class: "stationLink", 
-      data: { action: "click->tooltip#show" }) 
+      class: 'stationLink', 
+      data: { action: 'click->tooltip#show' }) 
     %>
     
-    <%= content_tag(:div, id: "tooltip_#{station.abbr}", 
-      class: "stationTooltip hidden", 
-      data: { abbr: station.abbr, "tooltip-target" => "tooltip" }) do 
+    <%= content_tag(:div, id: "#tooltip_#{station.abbr}", 
+      class: 'stationTooltip hidden', 
+      data: { abbr: station.abbr, 'tooltip-target' => 'tooltip' }) do 
     %>
 
-      <div class="stationTitleContainer underline">
-        <div class="stationTitle">
-          <h3><%= station.name.delete("\n") %></h3>
+      <div class='stationTitleContainer underline'>
+        <div class='stationTitle'>
+          <h3><%= station.name.delete('\n') %></h3>
         </div>
-        <div class="closeLink"> 
+        <div class='closeLink'> 
           <%= link_to '&times;'.html_safe, root_path,
             id: "close_#{station.abbr}",
-            data: { action: "click->tooltip#hide" }
+            data: { action: 'click->tooltip#hide' }
           %> 
         </div>
       </div>

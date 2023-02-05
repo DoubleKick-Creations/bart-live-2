@@ -8,16 +8,16 @@
     <% times = line['estimate'] %>
 
     <% times.each_with_index do |time, i| %>
-      <% if time['minutes'] != "Leaving" %>
+      <% if time['minutes'] != 'Leaving' %>
           <% if i == times.length - 1 %>
-            <%= time['minutes'] + " min" %>
+            <%= time['minutes'] + ' min' %>
           <% else %>
-            <%= time['minutes'] + "," %>
+            <%= time['minutes'] + ',' %>
           <% end %>
       <% elsif i == times.length - 1  %>
-        <%= "Boarding" %>
+        <%= 'Boarding' %>
       <% else  %>
-        <%= "Boarding," %>
+        <%= 'Boarding,' %>
       <% end %>
     <% end %>
     <br>

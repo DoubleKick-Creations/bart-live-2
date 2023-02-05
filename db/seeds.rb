@@ -1,4 +1,4 @@
-Station.create([
+Station.create!([
   { abbr: "12th", name: "12th St. Oakland City Center" },
   { abbr: "16th", name: "16th St. Mission" },
   { abbr: "19th", name: "19th St. Oakland" },

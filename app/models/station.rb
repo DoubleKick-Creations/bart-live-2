@@ -1,6 +1,5 @@
 class Station < ApplicationRecord
   validates :abbr, presence: true
-  validates :response, presence: true
 
   BART_API_KEY = Rails.application.credentials.bart_api_key
 

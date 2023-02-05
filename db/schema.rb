@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_04_214005) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.jsonb "response", null: false, default: {}
+    t.jsonb "response", default: {}, null: false
   end
 
 end

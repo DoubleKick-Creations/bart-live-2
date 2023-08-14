@@ -31,7 +31,7 @@ class Station < ApplicationRecord
       return response
     end
 
-    if api_updates_down?
+    if bart_api_down?
       response['root']['message'] = I18n.t(:unavailable)
       return response
     end
@@ -47,7 +47,6 @@ class Station < ApplicationRecord
   private
 
   def oakland_airport?
-    puts "abbr: #{abbr}!!!!!!!!!!!"
     abbr == 'oakl'
   end
 
@@ -55,7 +54,7 @@ class Station < ApplicationRecord
     response['root']['message'].present?
   end
 
-  def api_updates_down?
+  def bart_api_down?
     response['root']['station']['message'] &&
       response['root']['station']['message']['error'] == 'Updates are temporarily unavailable.'
   end

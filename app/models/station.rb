@@ -21,17 +21,17 @@ class Station < ApplicationRecord
   end
 
   def format_station_data
-    if oakland_airport?
+    if oakl_airport?
       response['root']['message'] = I18n.t(:oakland_airport)
       return response
     end
 
-    if after_service_hours?
+    if after_hours?
       response['root']['message'] = I18n.t(:after_hours)
       return response
     end
 
-    if api_updates_down?
+    if api_down?
       response['root']['message'] = I18n.t(:unavailable)
       return response
     end
@@ -44,21 +44,24 @@ class Station < ApplicationRecord
     response
   end
 
-  private
-
-  def oakland_airport?
-    puts "abbr: #{abbr}!!!!!!!!!!!"
+  def oakl_airport?
     abbr == 'oakl'
   end
 
-  def after_service_hours?
+  def after_hours?
     response['root']['message'].present?
   end
 
-  def api_updates_down?
+  def api_down?
     response['root']['station']['message'] &&
       response['root']['station']['message']['error'] == 'Updates are temporarily unavailable.'
   end
+
+  def times_unavailable?
+    oakl_airport? || after_hours? || api_down?
+  end
+
+  private
 
   def two_or_more_trains?
     response['root']['station']['etd'].is_a?(Array)

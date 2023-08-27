@@ -7,10 +7,12 @@
     Times as of <%= @time_now.strftime('%l:%M:%S%p') %>
   </div>
   <div class='toggleLink'>
-    <%= link_to station_path(id: @station.abbr, time_format: @toggle_format),
-      data: { turbo_frame: "times_frame_#{@station.abbr}" },
-      class: 'btn btn-outline-info' do %>
-        <i class='bi bi-arrow-repeat'>format</i>
+    <% unless @station.times_unavailable? %>
+      <%= link_to station_path(id: @station.abbr, time_format: @toggle_format),
+        data: { turbo_frame: "times_frame_#{@station.abbr}" },
+        class: 'btn btn-outline-info' do %>
+          <i class='bi bi-arrow-repeat'>format</i>
+      <% end %>
     <% end %>
   </div>
 <% end %>

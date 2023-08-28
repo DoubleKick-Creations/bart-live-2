@@ -25,11 +25,13 @@ class StationsController < ApplicationController
   # media queries to change the appearance for different viewport sizes
   # Activate user home station (if set), the same way I open stations (may need new Stimulus home-station-controller)
   # Add user authentication using Devise, then allow setting of home station/convenience links
-  # add closest station finder via google places API
-  # add bootstrap Navbar, about, contact, favorite stations, ie. (home, work, friend, etc)
+  # Add closest station finder via google places API
+  # add bootstrap Navbar (and footer?), about, contact, favorite stations, ie. (home, work, friend, etc)
   # upsert saved response data to avoid filling up the database?
   # Load saved response data if request to same station is made within 30-60 seconds?
-  # If not, remove Jsonb column from stations table
+  # Use Redis to cache responses instead of postgres?
+  # Use Turbo Streams to create Reminder notifications for trains at a set time
+  # Add reminder model, controller, and modal view for creating reminders
 
   private
 

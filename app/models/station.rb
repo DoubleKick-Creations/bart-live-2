@@ -62,7 +62,10 @@ class Station < ApplicationRecord
   end
 
   def stale_response?
-    response.blank? || DateTime.parse(response['root']['time']) <= 30.seconds.ago
+    return true if response.blank?
+
+    response_time = DateTime.parse(response['root']['time'])
+    response_time + 60.seconds <= DateTime.now
   end
 
   private

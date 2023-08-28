@@ -2,19 +2,20 @@
 
 # Handles all responsive rendering of station data via Hotwire?Turbo
 class StationsController < ApplicationController
-  after_action :save_bart_response, if: -> { response.successful? }, only: :show
+  before_action :set_station, only: :show
 
   def index
     @stations = Station.all
   end
 
   def show
-    @station = Station.find_by_abbr(params[:id])
     render404 and return if bad_station_url
 
     @station.response = @station.fetch_station_data if @station.stale_response?
+    @station.save!
+
     @data = @station.format_station_data
-    @time_now = Time.parse(@data['root']['time'][0..-4])
+    @time_now = DateTime.parse(@data['root']['time'][0..-4])
     @time_format = params[:time_format]
     @toggle_format = flip_format(params[:time_format])
 
@@ -43,10 +44,8 @@ class StationsController < ApplicationController
     time_format == 'minutes' ? 'clock' : 'minutes'
   end
 
-  def save_bart_response
-    @station.response = @data
-    @station.save!
-  end
 
-  
+  def set_station
+    @station = Station.find_by_abbr(params[:id])
+  end
 end

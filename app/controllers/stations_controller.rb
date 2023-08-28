@@ -12,7 +12,7 @@ class StationsController < ApplicationController
     @station = Station.find_by_abbr(params[:id])
     render404 and return if bad_station_url
 
-    @station.response = @station.fetch_station_data
+    @station.response = @station.fetch_station_data if @station.stale_response?
     @data = @station.format_station_data
     @time_now = Time.parse(@data['root']['time'][0..-4])
     @time_format = params[:time_format]
@@ -47,4 +47,6 @@ class StationsController < ApplicationController
     @station.response = @data
     @station.save!
   end
+
+  
 end

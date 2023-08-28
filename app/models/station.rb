@@ -61,6 +61,10 @@ class Station < ApplicationRecord
     oakl_airport? || after_hours? || api_down?
   end
 
+  def stale_response?
+    response.blank? || DateTime.parse(response['root']['time']) <= 30.seconds.ago
+  end
+
   private
 
   def two_or_more_trains?

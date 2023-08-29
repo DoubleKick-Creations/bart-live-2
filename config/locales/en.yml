@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  after_hours: 'No trains arriving or departing at this time.'
+  api_down: 'Updates from BART.org are temporarily unavailable.'
+  after_hours: 'No trains are arriving or departing at this time. Service will begin again in the morning.'
   unavailable: 'Train times are currently unavailable for this station.'
   oakland_airport: 'Bart does not provide live times for this station because the trams to and from the airport arrive frequently (about every 5 minutes).'

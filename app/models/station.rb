@@ -56,7 +56,7 @@ class Station < ApplicationRecord
 
   def api_down?
     response['root']['station']['message'] &&
-      response['root']['station']['message']['error'] == 'Updates are temporarily unavailable.'
+      response['root']['station']['message']['error'] == I18n.t(:api_down)
   end
 
   def times_unavailable?

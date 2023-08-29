@@ -77,8 +77,7 @@ class Station < ApplicationRecord
   end
 
   def update_response
-    response = fetch_station_data
-    update(response:)
+    update(response: fetch_station_data)
   end
 
   private

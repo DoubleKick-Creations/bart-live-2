@@ -1,11 +1,15 @@
 <%= turbo_frame_tag "times_frame_#{@station.abbr}" do %>
-
-  <%= render 'stations/formats/minutes' if @time_format == 'minutes' %>
-  <%= render 'stations/formats/clock' if @time_format == 'clock' %>
+  <% unless @data['root']['message'] %>
+    <%= render 'stations/formats/minutes' if @time_format == 'minutes' %>
+    <%= render 'stations/formats/clock' if @time_format == 'clock' %>
+  <% else %>
+    <%= @data['root']['message'] %>
+  <% end %>
 
   <div class='currentTime'>
     Times as of <%= @time_now.strftime('%l:%M:%S%p') %>
   </div>
+
   <div class='toggleLink'>
     <% unless @station.times_unavailable? %>
       <%= link_to station_path(id: @station.abbr, time_format: @toggle_format),

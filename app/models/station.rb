@@ -62,13 +62,19 @@ class Station < ApplicationRecord
   end
 
   def response_time
-    DateTime.parse(response['root']['time'])
+    Time.parse(response['root']['time'])
   end
 
   def stale_response?(delay = 1.minute)
     return true if response.blank?
 
-    DateTime.now >= response_time + delay
+    Time.zone = 'Pacific Time (US & Canada)'
+    Time.zone.now >= response_time + delay
+  end
+
+  def update_response
+    response = fetch_station_data
+    update(response:)
   end
 
   private

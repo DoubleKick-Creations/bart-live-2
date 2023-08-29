@@ -11,8 +11,7 @@ class StationsController < ApplicationController
   def show
     render404 and return if bad_station_url
 
-    @station.response = @station.fetch_station_data if @station.stale_response?
-    @station.save!
+    @station.update_response if @station.stale_response?
 
     @data = @station.format_station_data
     @time_now = DateTime.parse(@data['root']['time'][0..-4])

@@ -61,11 +61,14 @@ class Station < ApplicationRecord
     oakl_airport? || after_hours? || api_down?
   end
 
-  def stale_response?
+  def response_time
+    DateTime.parse(response['root']['time'])
+  end
+
+  def stale_response?(delay = 1.minute)
     return true if response.blank?
 
-    response_time = DateTime.parse(response['root']['time'])
-    DateTime.now - response_time >= 1.minute
+    DateTime.now - delay >= response_time
   end
 
   private

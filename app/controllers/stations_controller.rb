@@ -14,7 +14,7 @@ class StationsController < ApplicationController
     @station.update_response if @station.stale_response?
 
     @data = @station.format_station_data
-    @time_now = DateTime.parse(@data['root']['time'][0..-4])
+    @time_now = @station.response_time
     @time_format = params[:time_format]
     @toggle_format = flip_format(params[:time_format])
 

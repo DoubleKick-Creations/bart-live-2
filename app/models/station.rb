@@ -68,7 +68,7 @@ class Station < ApplicationRecord
   def stale_response?(delay = 1.minute)
     return true if response.blank?
 
-    DateTime.now - delay <= response_time
+    DateTime.now >= response_time + delay
   end
 
   private

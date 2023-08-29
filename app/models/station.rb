@@ -65,7 +65,7 @@ class Station < ApplicationRecord
     return true if response.blank?
 
     response_time = DateTime.parse(response['root']['time'])
-    response_time + 60.seconds <= DateTime.now
+    DateTime.now - response_time >= 1.minute
   end
 
   private

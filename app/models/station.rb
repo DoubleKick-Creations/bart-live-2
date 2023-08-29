@@ -21,6 +21,8 @@ class Station < ApplicationRecord
   end
 
   def format_station_data
+    update_response if stale_response?
+
     if oakl_airport?
       response['root']['message'] = I18n.t(:oakland_airport)
       return response
@@ -62,14 +64,16 @@ class Station < ApplicationRecord
   end
 
   def response_time
-    Time.parse(response['root']['time'])
+    Time.zone = 'Pacific Time (US & Canada)'
+    DateTime.parse(Time.parse(response['root']['time']).to_s)
   end
 
   def stale_response?(delay = 1.minute)
     return true if response.blank?
 
     Time.zone = 'Pacific Time (US & Canada)'
-    Time.zone.now >= response_time + delay
+    time_now = DateTime.parse(Time.now.to_s)
+    time_now > response_time + delay
   end
 
   def update_response

@@ -11,7 +11,6 @@ class StationsController < ApplicationController
 
   def show
     render404 and return if bad_station_url
-    @station.update_response if @station.stale_response?
 
     @data = @station.format_station_data
     @time_now = @station.response_time

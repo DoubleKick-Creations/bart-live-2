@@ -3,8 +3,6 @@
 # Handles all responsive rendering of station data via Hotwire?Turbo
 class StationsController < ApplicationController
   before_action :set_station, only: :show
-  #after action update response if stale response
-  after_action :update_response, if: -> { @station.stale_response? }, only: :show
 
   def index
     @stations = Station.all
@@ -12,6 +10,7 @@ class StationsController < ApplicationController
 
   def show
     render404 and return if bad_station_url
+    update_response if @station.stale_response?
 
     @data = @station.format_station_data
     @time_now = @station.response_time

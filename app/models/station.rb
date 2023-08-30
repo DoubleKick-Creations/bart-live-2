@@ -65,15 +65,16 @@ class Station < ApplicationRecord
 
   def response_time
     Time.zone = 'Pacific Time (US & Canada)'
-    DateTime.parse(Time.parse(response['root']['time']).to_s)
+    Time.parse(response['root']['time']).to_datetime # Need times to match types for comparison
   end
 
+  # Method for poor man's caching in Postgres to avoid hitting the BART API too often
   def stale_response?(delay = 1.minute)
     return true if response.blank?
 
     Time.zone = 'Pacific Time (US & Canada)'
-    time_now = DateTime.parse(Time.now.to_s)
-    time_now > response_time + delay
+    time_now = Time.now.to_datetime
+    time_now > response_time + delay # Need times to match types for comparison
   end
 
   def update_response

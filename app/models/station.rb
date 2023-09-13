@@ -70,13 +70,13 @@ class Station < ApplicationRecord
   end
 
   # Method for poor man's caching in Postgres to avoid hitting the BART API too often
-  def stale_response?(delay = 1.minute)
+  def stale_response?(delay = 2.minutes)
     return true if response.blank?
 
     Time.zone = 'Pacific Time (US & Canada)'
     time_now = Time.now.to_datetime
     puts "time now: #{time_now}"
-    puts "response time: #{response_time+delay}"
+    puts "response time: #{response_time + delay}"
     puts "time now > response time + delay: #{time_now > response_time + delay}"
     time_now > response_time + delay # Need times to match types for comparison
   end

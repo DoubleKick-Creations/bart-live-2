@@ -3,7 +3,6 @@
 # Class handles the data fetching and a number of edge cases created by the BART API
 class Station < ApplicationRecord
   validates :abbr, presence: true
-  validates :name, presence: true
 
   BART_API_KEY = Rails.application.credentials.bart_api_key
 

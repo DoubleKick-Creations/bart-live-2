@@ -75,6 +75,9 @@ class Station < ApplicationRecord
 
     Time.zone = 'Pacific Time (US & Canada)'
     time_now = Time.now.to_datetime
+    puts "time now: #{time_now}"
+    puts "response time: #{response_time+delay}"
+    puts "time now > response time + delay: #{time_now > response_time + delay}"
     time_now > response_time + delay # Need times to match types for comparison
   end
 

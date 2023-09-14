@@ -22,7 +22,8 @@ class Station < ApplicationRecord
   end
 
   def format_station_data
-    update_response if stale_response?
+    # update_response if stale_response?
+    fetch_station_data
 
     if oakl_airport?
       response['root']['message'] = I18n.t(:oakland_airport)
@@ -70,14 +71,16 @@ class Station < ApplicationRecord
   end
 
   # Method for poor man's caching in Postgres to avoid hitting the BART API too often
-  def stale_response?(delay = 2.minutes)
+  def stale_response?(delay = 1.minute)
     return true if response.blank?
 
     Time.zone = 'Pacific Time (US & Canada)'
     time_now = Time.now.to_datetime
+    ## DEBUGGING ##
     puts "time now: #{time_now}"
     puts "response time: #{response_time + delay}"
     puts "time now > response time + delay: #{time_now > response_time + delay}"
+
     time_now > response_time + delay # Need times to match types for comparison
   end
 

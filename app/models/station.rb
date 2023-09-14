@@ -23,7 +23,7 @@ class Station < ApplicationRecord
 
   def format_station_data
     # update_response if stale_response?
-    fetch_station_data
+    response = fetch_station_data
 
     if oakl_airport?
       response['root']['message'] = I18n.t(:oakland_airport)

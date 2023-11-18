@@ -12,7 +12,7 @@
 	padding-left: 6px;
 	padding-right: 0px;
 	background: #B1DFFF;  //background color e6e6e6
-	border: #00aeef solid 3px; //007FFF, #0099CC, 009ADA or line match #00aeef 4px blue 
+	border: #00aeef solid 3px; //007FFF, #0099CC, 009ADA or line match #00aeef 4px blue
 	opacity:0.9;
 	filter:alpha(opacity=90);
 	-webkit-border-radius: 10px;
@@ -76,7 +76,7 @@
 	right: 5px;
 	a {
 		font-family: futura;
-		color: black; 
+		color: black;
 		font-size: xx-large;
 	}
 	a:hover { color: white; }
@@ -97,16 +97,16 @@
 	right: 3px;
 	a {
 		padding: 0px 3px;
-		font-size: 0.7em; 
+		font-size: 0.8em;
 		font-family: futura;
 	}
 	a:hover {
 		color: white;
-		font-size: 0.75em;
+		font-size: 0.8em;
 	};
-	a:active { 
+	a:active {
 		color: black;
-		font-size: 0.75em;
+		font-size: 0.8em;
 	}  /* selected link unicode watch character &#8986; */
 	.bi::before {
 		line-height: 0px;
@@ -136,10 +136,10 @@
 }
 
 .blue-line {
-	color: #00aeef; // # Or #009ADA 
+	color: #00aeef; // # Or #009ADA
 }
 .green-line {
-	color: #51b848;  
+	color: #51b848;
 }
 
 .red-line {

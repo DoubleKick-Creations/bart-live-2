@@ -5,7 +5,6 @@
 	width: 100%;
 	height: 100%;
 	z-index: 0;
-	
 }
 
 #stationsMap {
@@ -13,7 +12,7 @@
 	margin: 0 auto;
 	background-image: url('bart-map-no-stations.jpg');
 	background-repeat: no-repeat;
-	width: 900px;  
+	width: 900px;
 	height: 800px;
 	z-index: 0;
 	border-radius: 20px;
@@ -25,7 +24,7 @@
 	position: absolute;
 	top: 1%;
 	left: 2%;
-	color: #FFFFFF; 
+	color: #FFFFFF;
 	font-family: futura;
 	font-size: 40px;
 	letter-spacing: -2px;
@@ -42,9 +41,9 @@
 #linkContainer {
 	position: relative;
 	margin: 0 auto;
-	width: 900px;  
+	width: 900px;
 	height: 800px;
-	z-index: 1;	
+	z-index: 1;
 }
 
 .stationLink {
@@ -57,81 +56,81 @@
 	color: black;
 }
 
-#station_12th { 
-	position: absolute; 
+#station_12th {
+	position: absolute;
 	top: 31.7%;
   left: 41.1%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_16th { 
-	position: absolute; 
+#station_16th {
+	position: absolute;
 	top: 43.2%;
   left: 7.8%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_19th { 
-	position: absolute; 
+#station_19th {
+	position: absolute;
 	top: 28.9%;
   left: 41.2%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_24th { 
-	position: absolute; 
+#station_24th {
+	position: absolute;
 	top: 45%;
   left: 6.8%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_antc { 
-	position: absolute; 
+#station_antc {
+	position: absolute;
 	top: 0.9%;
 	left: 89.1%;
 	.stationLink {
 		letter-spacing: -0.02em;
 		font-size: 1.2em;
 	}
-} 
+}
 
-#station_ashb { 
-	position: absolute; 
+#station_ashb {
+	position: absolute;
 	top: 23.2%;
   left: 32.3%;
 	.stationLink {
-		font-size: 0.7em;
-	}
-} 
-
-#station_balb { 
-	position: absolute; 
-	top: 48.6%;
-  left: 6.2%;
-	.stationLink {
-		font-size: 0.7em;
-	}
-} 
-
-#station_bayf { 
-	position: absolute; 
-	top: 51%;
-  left: 53.6%;
-	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
 }
 
-#station_bery { 
-	position: absolute; 
+#station_balb {
+	position: absolute;
+	top: 48.6%;
+  left: 6.2%;
+	.stationLink {
+		font-size: 0.75em;
+	}
+}
+
+#station_bayf {
+	position: absolute;
+	top: 51%;
+  left: 53.6%;
+	.stationLink {
+		font-size: 0.75em;
+	}
+}
+
+#station_bery {
+	position: absolute;
 	top: 94.8%;
 	left: 76.7%;
 	.stationLink {
@@ -139,75 +138,75 @@
 		font-size: 1.2em;
 		letter-spacing: -0.02em;
 	}
-} 
+}
 
-#station_cast { 
-	position: absolute; 	
+#station_cast {
+	position: absolute;
 	top: 55.6%;
   left: 61%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 		line-height: 13px;
 	}
-} 
+}
 
-#station_civc { 
-	position: absolute; 
+#station_civc {
+	position: absolute;
 	top: 41.5%;
   left: 5.6%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_cols { 
-	position: absolute; 
+#station_cols {
+	position: absolute;
 	top: 44.7%;
   left: 48.1%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_colm { 
-	position: absolute; 
+#station_colm {
+	position: absolute;
 	top: 56.4%;
   left: 9.8%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_conc { 
-	position: absolute; 
+#station_conc {
+	position: absolute;
 	top: 10%;
 	left: 63.3%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_daly { 
-	position: absolute; 
+#station_daly {
+	position: absolute;
 	top: 52.1%;
 	left: 2.8%;
 	.stationLink {
 		font-size: 1.2em;
 		letter-spacing: -0.02em;
 	}
-} 
+}
 
-#station_dbrk { 
-	position: absolute; 
+#station_dbrk {
+	position: absolute;
 	top: 21%;
   left: 23.9%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_dubl { 
-	position: absolute; 
+#station_dubl {
+	position: absolute;
 	top: 50.6%;
 	left: 81.9%;
 	.stationLink {
@@ -215,305 +214,305 @@
 		font-size: 1.2em;
 		letter-spacing: -0.02em;
 	}
-} 
+}
 
-#station_deln { 
-	position: absolute; 
+#station_deln {
+	position: absolute;
 	top: 13.4%;
   left: 19.9%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_embr { 
-	position: absolute; 
+#station_embr {
+	position: absolute;
 	top: 36.6%;
   left: 12.7%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_frmt { 
-	position: absolute; 
+#station_frmt {
+	position: absolute;
 	top: 74.3%;
 	left: 71.9%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_ftvl { 
-	position: absolute; 
+#station_ftvl {
+	position: absolute;
 	top: 41.3%;
   left: 45.4%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_glen { 
-	position: absolute; 
+#station_glen {
+	position: absolute;
 	top: 46.8%;
   left: 8.6%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_hayw { 
-	position: absolute; 
+#station_hayw {
+	position: absolute;
 	top: 59.4%;
   left: 59.2%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_lafy { 
-	position: absolute; 
+#station_lafy {
+	position: absolute;
 	top: 18.3%;
   left: 51.4%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_lake { 
-	position: absolute; 
+#station_lake {
+	position: absolute;
 	top: 38.3%;
   left: 42.8%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_mcar { 
-	position: absolute; 
+#station_mcar {
+	position: absolute;
 	top: 26.4%;
   left: 41.5%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_mlbr { 
-	position: absolute; 
+#station_mlbr {
+	position: absolute;
 	top: 69.3%;
 	left: 16%;
 	.stationLink {
 		font-size: 1.2em;
 		letter-spacing: -0.02em;
 	}
-} 
+}
 
-#station_mlpt { 
-	position: absolute; 
+#station_mlpt {
+	position: absolute;
 	top: 89%;
 	left: 75.5%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
 }
 
-#station_mont { 
-	position: absolute; 
+#station_mont {
+	position: absolute;
 	top: 38.2%;
-  left: 10.7%;
+  left: 10.9%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_nbrk { 
-	position: absolute; 
+#station_nbrk {
+	position: absolute;
 	top: 18.4%;
   left: 25%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_ncon { 
-	position: absolute; 
+#station_ncon {
+	position: absolute;
 	top: 7.3%;
   left: 67.5%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_orin { 
+#station_orin {
 	position: absolute;
 	top: 21%;
   left: 47.5%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
 }
 
-#station_oakl { 
-	position: absolute; 
+#station_oakl {
+	position: absolute;
 	top: 53%;
 	left: 38%;
 	.stationLink {
-		font-size: 0.9em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_pctr { 
-	position: absolute; 
+#station_pctr {
+	position: absolute;
 	top: 0.4%;
 	left: 80.2%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 		line-height: 12px;
 	}
-} 
+}
 
-#station_pitt { 
-	position: absolute; 
+#station_pitt {
+	position: absolute;
 	top: 0.4%;
-	left: 70.8%;
+	left: 70.9%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 		line-height: 12px;
 	}
-} 
+}
 
-#station_phil { 
-	position: absolute; 
+#station_phil {
+	position: absolute;
 	top: 12.7%;
   left: 59.7%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_plza { 
-	position: absolute; 
+#station_plza {
+	position: absolute;
 	top: 16%;
   left: 23.3%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_powl { 
-	position: absolute; 
+#station_powl {
+	position: absolute;
 	top: 39.8%;
   left: 13.1%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 
-#station_rich { 
-	position: absolute; 
+#station_rich {
+	position: absolute;
 	top: 8.2%;
 	left: 18.9%;
 	.stationLink {
 		font-size: 1.2em;
 		letter-spacing: -0.02em;
 	}
-} 
+}
 
-#station_rock { 
-	position: absolute; 
+#station_rock {
+	position: absolute;
 	top: 23.8%;
   left: 43.6%;
 	.stationLink {
-		font-size: 0.7em;
-	}
-} 
-
-#station_sbrn { 
-	position: absolute; 
-	top: 63%;
-  left: 11.6%;
-	.stationLink {
-		font-size: 0.7em;
-	}
-} 
-
-#station_sfia { 
-	position: absolute; 
-	top: 63%;
-  left: 26%;
-	.stationLink {
-		font-size: 0.9em;
-	}
-} 
-
-#station_sanl { 
-	position: absolute; 
-	top: 47.9%;
-  left: 50.8%;
-	.stationLink {
-		font-size: 0.7em;
-	}
-} 
-
-#station_shay { 
-	position: absolute; 
-	top: 64.3%;
-  left: 63.5%;
-	.stationLink {
-		font-size: 0.7em;
-	}
-} 
-
-#station_ssan { 
-	position: absolute; 
-	top: 59.7%;
-  left: 4.1%;
-	.stationLink {
-		font-size: 0.7em;
-	}
-} 
-
-#station_ucty { 
-	position: absolute; 
-	top: 69.2%;
-  left: 67.6%;
-	.stationLink {
-		font-size: 0.7em;
-	}
-} 
-
-#station_warm { 
-	position: absolute; 
-	top: 81.9%;
-	left: 74.5%;
-	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
 }
 
-#station_wcrk { 
-	position: absolute; 
+#station_sbrn {
+	position: absolute;
+	top: 63%;
+  left: 11.6%;
+	.stationLink {
+		font-size: 0.75em;
+	}
+}
+
+#station_sfia {
+	position: absolute;
+	top: 63%;
+  left: 26%;
+	.stationLink {
+		font-size: 0.75em;
+	}
+}
+
+#station_sanl {
+	position: absolute;
+	top: 47.9%;
+  left: 50.9%;
+	.stationLink {
+		font-size: 0.75em;
+	}
+}
+
+#station_shay {
+	position: absolute;
+	top: 64.3%;
+  left: 63.5%;
+	.stationLink {
+		font-size: 0.75em;
+	}
+}
+
+#station_ssan {
+	position: absolute;
+	top: 59.7%;
+  left: 4.1%;
+	.stationLink {
+		font-size: 0.75em;
+	}
+}
+
+#station_ucty {
+	position: absolute;
+	top: 69.2%;
+  left: 67.6%;
+	.stationLink {
+		font-size: 0.75em;
+	}
+}
+
+#station_warm {
+	position: absolute;
+	top: 81.9%;
+	left: 74.5%;
+	.stationLink {
+		font-size: 0.75em;
+	}
+}
+
+#station_wcrk {
+	position: absolute;
 	top: 15.4%;
   left: 55.7%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
-} 
+}
 #station_wdub {
-	position: absolute; 
+	position: absolute;
 	top: 54.6%;
 	left: 72.4%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 		line-height: 12px
 	}
 }
 
-#station_woak { 
-	position: absolute; 
+#station_woak {
+	position: absolute;
 	top: 32.6%;
   left: 25.9%;
 	.stationLink {
-		font-size: 0.7em;
+		font-size: 0.75em;
 	}
 }

@@ -12,16 +12,12 @@ class Station < ApplicationRecord
       scheme: 'http',
       host: 'api.bart.gov',
       path: 'api/etd.aspx',
-      query_values: {
-        cmd: 'etd',
-        orig: abbr,
-        key: BART_API_KEY
-      }
+      query_values: { cmd: 'etd', orig: abbr, key: BART_API_KEY }
     )
     HTTParty.get(bart_query_uri)
   end
 
-  def format_station_data
+  def format_station_data # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     update_response # if stale_response?
 
     if oakl_airport?

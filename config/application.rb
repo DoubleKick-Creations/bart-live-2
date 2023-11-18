@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative 'boot'
-
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -9,6 +8,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module BartLive2
+  # Primary Application class
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -18,7 +18,7 @@ module BartLive2
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    config.time_zone = "America/Los_Angeles"
+    config.time_zone = 'America/Los_Angeles'
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

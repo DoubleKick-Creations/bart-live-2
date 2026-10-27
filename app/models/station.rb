@@ -6,26 +6,20 @@ class Station < ApplicationRecord
   validates :name, presence: true
 
   def fetch_station_data
-    BartAPIClient.new(abbr:).call
+    http_response = BartAPIClient.new(abbr:).call
+    raise StandardError('Bart API request failure') if http_response.code.to_i != 200
+
+    http_response.parsed_response
   end
 
-  def format_station_data # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-    update_response # if stale_response?
+  def format_station_data # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+    update_response if stale_response?
 
-    if oakl_airport?
-      response['root']['message'] = I18n.t(:oakland_airport)
-      return response
-    end
+    return { 'root' => { 'message' => I18n.t(:unavailable) } } if response.blank?
 
-    if after_hours?
-      response['root']['message'] = I18n.t(:after_hours)
-      return response
-    end
-
-    if api_down?
-      response['root']['message'] = I18n.t(:unavailable)
-      return response
-    end
+    return response_with_message(I18n.t(:oakland_airport)) if oakl_airport?
+    return response_with_message(I18n.t(:after_hours)) if after_hours?
+    return response_with_message(I18n.t(:unavailable)) if api_down?
 
     response['root']['station']['etd'] = [response['root']['station']['etd']] if one_train?
 
@@ -40,42 +34,45 @@ class Station < ApplicationRecord
   end
 
   def after_hours?
-    response['root']['message'].present?
+    response.dig('root', 'message').present?
   end
 
   def api_down?
-    response['root']['station']['message'] &&
-      response['root']['station']['message']['error'] == I18n.t(:api_down)
+    response.dig('root', 'station', 'message', 'error') == I18n.t(:api_down)
   end
 
   def times_unavailable?
-    oakl_airport? || after_hours? || api_down?
+    response.blank? || oakl_airport? || after_hours? || api_down?
   end
 
   def response_time
     Time.zone = 'Pacific Time (US & Canada)'
-    Time.parse(response['root']['time']).to_datetime # Need times to match types for comparison
+    time = response.dig('root', 'time')
+    time.present? ? Time.parse(time).to_datetime : Time.current.to_datetime
   end
 
   # Method for poor man's caching in Postgres to avoid hitting the BART API too often
   def stale_response?(delay = 1.minute)
-    return true if response.blank?
+    return true if response.blank? || response.dig('root', 'time').blank?
 
     Time.zone = 'Pacific Time (US & Canada)'
-    time_now = Time.now.to_datetime
-    ## DEBUGGING ##
-    puts "time now: #{time_now}"
-    puts "response time: #{response_time + delay}"
-    puts "time now > response time + delay: #{time_now > response_time + delay}"
-
-    time_now > response_time + delay # Need times to match types for comparison
+    Time.now.to_datetime > response_time + delay # Need times to match types for comparison
   end
 
   def update_response
     update(response: fetch_station_data)
+  rescue StandardError => e
+    # Keep serving the last saved response when the BART API is unavailable
+    Rails.logger.error("BART API response error for #{abbr}: #{e.message}")
   end
 
   private
+
+  def response_with_message(message)
+    response['root'] ||= {}
+    response['root']['message'] = message
+    response
+  end
 
   def two_or_more_trains?
     response['root']['station']['etd'].is_a?(Array)

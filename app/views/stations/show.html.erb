@@ -1,9 +1,9 @@
 <%= turbo_frame_tag "times_frame_#{@station.abbr}" do %>
-  <% unless @data['root']['message'] %>
+  <% unless @data.dig('root', 'message') %>
     <%= render 'stations/formats/minutes' if @time_format == 'minutes' %>
     <%= render 'stations/formats/clock' if @time_format == 'clock' %>
   <% else %>
-    <%= @data['root']['message'] %>
+    <%= @data.dig('root', 'message') %>
   <% end %>
 
   <div class='currentTime'>

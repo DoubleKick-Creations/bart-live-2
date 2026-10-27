@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+POSTGRESQL_CACHING_DELAY = 1.minutes # Serve saved JSONB response for this many minutes before hitting the BART API again
+
 # Class handles the data fetching and a number of edge cases created by the BART API
 class Station < ApplicationRecord
   validates :abbr, presence: true
@@ -21,7 +23,7 @@ class Station < ApplicationRecord
     return response_with_message(I18n.t(:after_hours)) if after_hours?
     return response_with_message(I18n.t(:unavailable)) if api_down?
 
-    response['root']['station']['etd'] = [response['root']['station']['etd']] if one_train?
+    response['root']['station']['etd'] = [response.dig('root', 'station', 'etd')] if one_train?
 
     all_train_times.each do |line|
       line['estimate'] = [line['estimate']] unless line['estimate'].is_a?(Array)
@@ -52,7 +54,7 @@ class Station < ApplicationRecord
   end
 
   # Method for poor man's caching in Postgres to avoid hitting the BART API too often
-  def stale_response?(delay = 1.minute)
+  def stale_response?(delay = POSTGRESQL_CACHING_DELAY)
     return true if response.blank? || response.dig('root', 'time').blank?
 
     Time.zone = 'Pacific Time (US & Canada)'

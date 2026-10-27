@@ -17,38 +17,61 @@ $bart-colors: (
 
 body { background: #ccedff; }
 
+// Responsive scale shared by the app header and the map
+// Desktop is the default; tablet and phone scale the fixed-size layout down
+:root {
+  --app-scale: 1;
+}
+
+// Tablet
+// Divide two lengths so the result is a unitless scale factor (multiplying a
+// length by a vw expression is invalid in calc()).
+@media (max-width: 1024px) {
+  :root {
+    --app-scale: min(1, calc((100vw - 48px) / 906px));
+  }
+}
+
+// Phone
+@media (max-width: 700px) {
+  :root {
+    --app-scale: calc((100vw - 24px) / 906px);
+  }
+}
+
 // App title, matches the map's "live" word at 3x its size
 // Mimics the BART logo: black lowercase "b", blue rest
 .app-header {
-  width: 900px;
+  width: min(900px, 100%);
   margin: 10px auto 0;
   text-align: center;
   font-family: futura;
   font-weight: bold;
-  font-size: 144px;
+  font-size: calc(144px * var(--app-scale));
   line-height: 1;
-  letter-spacing: 2px;
+  letter-spacing: calc(2px * var(--app-scale));
   color: #00aeef;
 }
 
+// Offsets use em so the logo overlap scales with the title
 .app-header-b {
   color: black;
   position: relative;
   z-index: 2;
-  margin-right: -40px;
+  margin-right: -0.278em;
   font-style: normal;
 }
 
 .app-header-live {
   font-style: italic;
-  font-size: 130px;
+  font-size: 0.903em;
   font-weight: 900;
   letter-spacing: 0px;
   filter: drop-shadow(1px 1px 1px black) drop-shadow(-1px -1px 1px black) drop-shadow(1px -1px 1px black) drop-shadow(-1px 1px 1px black);
 }
 
 .app-header-a {
-  margin-right: -6px;
+  margin-right: -0.042em;
 }
 
 .centered {

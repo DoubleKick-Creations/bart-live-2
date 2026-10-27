@@ -1,15 +1,17 @@
 #mapContainer {
 	position: relative;
-	margin-top: 10px;
-	margin-bottom: 30px;
-	width: 100%;
-	height: 100%;
+	margin: 10px auto 30px;
+	// 900x802 map plus the 3px border on each side, scaled to the viewport tier
+	width: calc(906px * var(--app-scale));
+	height: calc(808px * var(--app-scale));
 	z-index: 0;
 }
 
 #stationsMap {
-	position: relative;
-	margin: 0 auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
 	background-image: url('bart-map-no-stations.jpg');
 	background-repeat: no-repeat;
 	width: 900px;
@@ -18,6 +20,8 @@
 	border-radius: 30px;
 	border: #00aeef solid 3px;
 	box-shadow: 15px 22.5px 15px #333333;
+	transform: scale(var(--app-scale));
+	transform-origin: top left;
 }
 
 .mapText {

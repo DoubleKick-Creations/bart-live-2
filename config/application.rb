@@ -20,5 +20,10 @@ module BartLive2
     #
     config.time_zone = 'America/Los_Angeles'
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # CSS is compiled by cssbundling/dart-sass. Sprockets' legacy libsass
+    # compressor cannot parse the modern output (e.g. calc() with mixed units),
+    # so it must stay off or assets:precompile fails.
+    config.assets.css_compressor = nil
   end
 end

@@ -1,0 +1,9 @@
+# RSpec example groups are naturally long; length is not a useful signal there.
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+# The generated spec_helper wraps its optional settings in a block comment.
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'

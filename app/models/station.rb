@@ -81,8 +81,8 @@ class Station < ApplicationRecord
     response['root']['station']['etd'].is_a?(Array)
   end
 
-  # BART API sends multiple trains per line in an array, but does not for a single train
-  # single trains need to be wrapped in arrays to prevent view parsing from breakin
+  # BART API sends multiple trains per line in an array, but does no array is sent for a single train
+  # As a result, single trains must be wrapped in arrays to prevent view parsing from breakin
   def one_train?
     !two_or_more_trains?
   end

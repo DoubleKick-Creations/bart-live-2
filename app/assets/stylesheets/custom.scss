@@ -39,39 +39,21 @@ body { background: #ccedff; }
   }
 }
 
-// App title, matches the map's "live" word at 3x its size
-// Mimics the BART logo: black lowercase "b", blue rest
+// App header image - dynamically resizable for different viewpoints
 .app-header {
-  width: min(900px, 100%);
+  width: min(750px, calc(100% - 20px));
   margin: 10px auto 0;
+  padding: 0 10px;
   text-align: center;
-  font-family: futura;
-  font-weight: bold;
-  font-size: calc(144px * var(--app-scale));
-  line-height: 1;
-  letter-spacing: calc(2px * var(--app-scale));
-  color: #00aeef;
+  box-sizing: border-box;
 }
 
-// Offsets use em so the logo overlap scales with the title
-.app-header-b {
-  color: black;
-  position: relative;
-  z-index: 2;
-  margin-right: -0.278em;
-  font-style: normal;
-}
-
-.app-header-live {
-  font-style: italic;
-  font-size: 0.903em;
-  font-weight: 900;
-  letter-spacing: 0px;
-  filter: drop-shadow(1px 1px 1px black) drop-shadow(-1px -1px 1px black) drop-shadow(1px -1px 1px black) drop-shadow(-1px 1px 1px black);
-}
-
-.app-header-a {
-  margin-right: -0.042em;
+.app-header-image {
+  width: 100%;
+  height: auto;
+  max-width: 750px;
+  display: block;
+  margin: 0 auto;
 }
 
 .centered {

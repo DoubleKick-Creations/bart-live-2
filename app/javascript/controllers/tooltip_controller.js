@@ -34,7 +34,7 @@ export default class extends Controller {
 
   // Keep tooltip box in viewport by translating it, but compensate pointer so it stays pointing at station
   keepInView(tooltip) {
-    const padding = 50;
+    const padding = 70;
     const rect = tooltip.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
 

@@ -41,9 +41,10 @@ body { background: #ffffff; }
 
 // App header image - dynamically resizable for different viewpoints
 .app-header {
-  width: min(400px, calc(100% - 50px));
+  width: calc(600px * var(--app-scale));
+  max-width: calc(100% - 20px);
   margin: 10px auto 0;
-  padding: 0 auto 20px 0;
+  padding: 0 10px;
   text-align: center;
   box-sizing: border-box;
 }
@@ -51,9 +52,8 @@ body { background: #ffffff; }
 .app-header-image {
   width: 100%;
   height: auto;
-  max-width: 750px;
   display: block;
-  margin: 0 auto 10px 0;
+  margin: 0 auto 10px auto;
   border-radius: 15px;
   border: #00aeef solid 3px;
   box-shadow: 4px 4px 4px #333333;

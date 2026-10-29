@@ -14,8 +14,11 @@ class Station < ApplicationRecord
     http_response.parsed_response
   end
 
-  def format_station_data # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
-    update_response if stale_response?
+  def fetch_station_date # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+    if stale_response? || response.blank?
+      update_response
+      reload
+    end
 
     return { 'root' => { 'message' => I18n.t(:unavailable) } } if response.blank?
 
@@ -49,8 +52,29 @@ class Station < ApplicationRecord
 
   def response_time
     Time.zone = 'Pacific Time (US & Canada)'
-    time = response.dig('root', 'time')
-    time.present? ? Time.parse(time).to_datetime : Time.current.to_datetime
+    root = response&.dig('root') || {}
+    time = root['time']
+    date = root['date']
+    string_to_parse = [date, time].compact_blank.join(' ')
+
+    return current_pacific_time if string_to_parse.blank?
+
+    [
+      -> { Time.strptime(string_to_parse, '%m/%d/%Y %I:%M:%S %p %Z') },
+      -> { Time.zone.parse(string_to_parse) },
+      -> { Time.parse(string_to_parse) }
+    ].each do |parser|
+      parsed = parser.call
+      return parsed.in_time_zone('Pacific Time (US & Canada)').to_datetime
+    rescue ArgumentError
+      next
+    end
+
+    current_pacific_time
+  end
+
+  def current_pacific_time
+    Time.current.in_time_zone('Pacific Time (US & Canada)').to_datetime
   end
 
   # Method for poor man's caching in Postgres to avoid hitting the BART API too often
@@ -58,11 +82,15 @@ class Station < ApplicationRecord
     return true if response.blank? || response.dig('root', 'time').blank?
 
     Time.zone = 'Pacific Time (US & Canada)'
-    Time.now.to_datetime > response_time + delay # Need times to match types for comparison
+    now = Time.current.in_time_zone('Pacific Time (US & Canada)').to_datetime
+    now > response_time + delay
   end
 
   def update_response
-    update(response: fetch_station_data)
+    new_data = fetch_station_data
+    update_columns(response: new_data, updated_at: Time.current)
+    self.response = new_data
+    self.updated_at = Time.current
   rescue StandardError => e
     # Keep serving the last saved response when the BART API is unavailable
     Rails.logger.error("BART API response error for #{abbr}: #{e.message}")

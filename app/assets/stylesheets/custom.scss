@@ -15,7 +15,7 @@ $bart-colors: (
 // Merge the maps
 // $theme-colors: map-merge($theme-colors, $custom-colors);
 
-body { background: #ccedff; }
+body { background: #ffffff; }
 
 // Responsive scale shared by the app header and the map
 // Desktop is the default; tablet and phone scale the fixed-size layout down
@@ -41,9 +41,9 @@ body { background: #ccedff; }
 
 // App header image - dynamically resizable for different viewpoints
 .app-header {
-  width: min(750px, calc(100% - 20px));
+  width: min(400px, calc(100% - 50px));
   margin: 10px auto 0;
-  padding: 0 10px;
+  padding: 0 auto 20px 0;
   text-align: center;
   box-sizing: border-box;
 }
@@ -53,9 +53,11 @@ body { background: #ccedff; }
   height: auto;
   max-width: 750px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 10px 0;
+  border-radius: 15px;
+  border: #00aeef solid 3px;
+  box-shadow: 4px 4px 4px #333333;
 }
-
 .centered {
   margin: 0 auto;
   text-align: left;

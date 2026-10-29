@@ -34,18 +34,6 @@ class Station < ApplicationRecord
     response
   end
 
-  def oakl_airport?
-    abbr == 'oakl'
-  end
-
-  def after_hours?
-    response.dig('root', 'message').present?
-  end
-
-  def api_down?
-    response.dig('root', 'station', 'message', 'error') == I18n.t(:api_down)
-  end
-
   def times_unavailable?
     response.blank? || oakl_airport? || after_hours? || api_down?
   end
@@ -73,6 +61,20 @@ class Station < ApplicationRecord
     current_pacific_time
   end
 
+  private
+
+  def oakl_airport?
+    abbr == 'oakl'
+  end
+
+  def after_hours?
+    response.dig('root', 'message').present?
+  end
+
+  def api_down?
+    response.dig('root', 'station', 'message', 'error') == I18n.t(:api_down)
+  end
+
   def current_pacific_time
     Time.current.in_time_zone('Pacific Time (US & Canada)').to_datetime
   end
@@ -95,8 +97,6 @@ class Station < ApplicationRecord
     # Keep serving the last saved response when the BART API is unavailable
     Rails.logger.error("BART API response error for #{abbr}: #{e.message}")
   end
-
-  private
 
   def response_with_message(message)
     response['root'] ||= {}

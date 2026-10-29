@@ -39,7 +39,7 @@ class StationTest < ActiveSupport::TestCase
 
     call_count = 0
     original_new = BartAPIClient.method(:new)
-    BartAPIClient.define_singleton_method(:new) do |**args|
+    BartAPIClient.define_singleton_method(:new) do |**_args|
       call_count += 1
       client = Object.new
       client.define_singleton_method(:call) do
@@ -58,7 +58,8 @@ class StationTest < ActiveSupport::TestCase
     assert_equal 1, call_count
     station = Station.find(@station.id)
     assert_equal 'SFO', station.response.dig('root', 'station', 'etd', 0, 'destination')
-    assert_not_equal old_response['root']['station']['etd'][0]['destination'], station.response.dig('root', 'station', 'etd', 0, 'destination')
+    assert_not_equal old_response['root']['station']['etd'][0]['destination'],
+                     station.response.dig('root', 'station', 'etd', 0, 'destination')
     assert_not_equal old_response, station.response
   end
 
@@ -80,7 +81,7 @@ class StationTest < ActiveSupport::TestCase
 
     call_count = 0
     original_new = BartAPIClient.method(:new)
-    BartAPIClient.define_singleton_method(:new) do |**args|
+    BartAPIClient.define_singleton_method(:new) do |**_args|
       call_count += 1
       raise 'BartAPIClient should not be called'
     end

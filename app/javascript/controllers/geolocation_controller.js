@@ -29,8 +29,12 @@ export default class extends Controller {
         const toast = document.querySelector('#toast-container [data-station-abbr]')
         if (toast) {
           const abbr = toast.dataset.stationAbbr
-          const link = document.querySelector(`#station_${abbr} .stationLink`)
-          if (link) link.click()
+          const tooltip = document.querySelector(`#tooltip_${abbr}`)
+          const isOpen = tooltip && tooltip.classList.contains('openTooltip')
+          if (!isOpen) {
+            const link = document.querySelector(`#station_${abbr} .stationLink`)
+            if (link) link.click()
+          }
         }
       }, 100)
     })

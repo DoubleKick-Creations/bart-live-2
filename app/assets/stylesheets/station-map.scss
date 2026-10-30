@@ -5,7 +5,7 @@
   text-align: center;
   min-height: 0;
   position: absolute;
-  top: -46px;
+  top: calc(-46px * var(--app-scale));
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
@@ -38,7 +38,7 @@
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: calc(18px * var(--app-scale));
   line-height: 1;
   cursor: pointer;
   padding: 0;
@@ -46,19 +46,25 @@
 
 .closest-station-btn {
   position: absolute;
-  bottom: 20px;
-  left: 15px;
+  bottom: calc(30px * var(--app-scale));
+  left: calc(25px * var(--app-scale));
   z-index: 5;
   margin-top: 0;
-  padding: 0 15px;
+  padding: 0 calc(15px * var(--app-scale));
   width: auto;
-  font-size: 14px;
+  font-size: calc(16px * var(--app-scale));
   font-family: helvetica;
   font-weight: bold;
   background: #00aeef;
-  height: 24px;
-  line-height: 24px;
+  height: calc(34px * var(--app-scale));
+  line-height: calc(34px * var(--app-scale));
+  text-align: center;
   border: black solid 1px;
+}
+
+.closest-station-btn:active,
+.closest-station-btn.pressed {
+  background: #007bb5;
 }
 
 #mapContainer {

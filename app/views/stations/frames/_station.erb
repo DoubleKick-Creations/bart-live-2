@@ -5,7 +5,7 @@
       data: { action: 'click->tooltip#show' })
     %>
 
-    <%= content_tag(:div, id: "#tooltip_#{station.abbr}",
+    <%= content_tag(:div, id: "tooltip_#{station.abbr}",
       class: 'stationTooltip hidden',
       data: { abbr: station.abbr, 'tooltip-target' => 'tooltip' }) do
     %>

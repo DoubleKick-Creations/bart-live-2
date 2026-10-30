@@ -9,6 +9,16 @@ class StationsController < ApplicationController
     @stations = Station.all
   end
 
+  def closest_station
+    lat = params[:latitude]
+    lng = params[:longitude]
+    @station = FindClosestStation.new(latitude: lat, longitude: lng).call
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to root_path }
+    end
+  end
+
   def show
     render404 and return if bad_station_url
 

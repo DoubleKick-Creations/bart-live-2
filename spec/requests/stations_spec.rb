@@ -159,8 +159,35 @@ RSpec.describe 'Stations', type: :request do
     end
   end
 
-  def create_station(abbr:, name:, response: {})
-    Station.create!(abbr:, name:, response:)
+  def create_station(abbr:, name:, response: {}, latitude: nil, longitude: nil)
+    Station.create!(abbr:, name:, response:, latitude:, longitude:)
+  end
+
+  describe 'GET /stations/closest_station' do
+    before do
+      create_station(abbr: 'woak', name: 'West Oakland', latitude: 37.804872, longitude: -122.29514)
+      create_station(abbr: 'mlbr', name: 'Millbrae', latitude: 37.600271, longitude: -122.386702)
+      create_station(abbr: 'embr', name: 'Embarcadero', latitude: 37.792874, longitude: -122.39702)
+    end
+
+    it 'returns West Oakland as the closest station' do
+      get closest_station_path, params: { latitude: 37.805, longitude: -122.295 }, headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
+
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include('West Oakland')
+    end
+
+    it 'returns Millbrae as the closest station' do
+      get closest_station_path, params: { latitude: 37.600, longitude: -122.387 }, headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
+
+      expect(response.body).to include('Millbrae')
+    end
+
+    it 'returns Embarcadero as the closest station' do
+      get closest_station_path, params: { latitude: 37.793, longitude: -122.397 }, headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
+
+      expect(response.body).to include('Embarcadero')
+    end
   end
 
   def failing_api_client

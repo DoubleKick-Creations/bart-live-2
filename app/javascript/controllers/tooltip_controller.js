@@ -6,6 +6,7 @@ export default class extends Controller {
   connect = () => this.class = 'stationTooltip';
 
   show (event) {
+    if (event) event.preventDefault();
     // Close any previously opened tooltip
     let openTooltips = Array.from(document.querySelectorAll('.openTooltip'));
     if (openTooltips.length >= 1) {

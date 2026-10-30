@@ -1,0 +1,7 @@
+<div class="toast-message toast-green" data-station-abbr="<%= station.abbr %>">
+  <span>Your closest station is <%= station.name %>.</span>
+  <button type="button" class="toast-close" onclick="this.closest('.toast-message').remove()">×</button>
+</div>
+<script>
+  setTimeout(function(){ var c = document.getElementById('toast-container'); if (c) c.innerHTML = ''; }, 10000);
+</script>

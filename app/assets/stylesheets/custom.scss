@@ -84,5 +84,45 @@ li {
 }
 
 .bart-background-blue { color: #ccedff; }
+
+.fancy_button {
+  width: 90px;
+  display: block;
+  position: relative;
+  background: #0252dd;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  line-height: 50px;
+  font-size: 18px;
+  padding: 0 70px;
+  white-space: nowrap;
+  margin-top: 25px;
+  transition: background 0.5s ease;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.fancy_button:before {
+  content: "";
+  position: absolute;
+  width: auto;
+  height: 100px;
+  background: #000;
+  bottom: -25px;
+  left: 0;
+  border: 2px solid #000;
+  transform: translateX(-50px) rotate(45deg);
+  transition: transform 0.5s ease;
+}
+.fancy_button:hover {
+  background: transparent;
+  border-color: #000;
+}
+.fancy_button:hover:before {
+  transform: translateX(250px) rotate(45deg);
+}
 .bart-light-blue { color: #009ADA; }
 .bart-royal-blue { color: #0252dd; }

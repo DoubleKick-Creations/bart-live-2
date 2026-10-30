@@ -1,4 +1,6 @@
 // Import and register all your controllers from the importmap under controllers/*
 import { application } from './application'
 import Tooltip from'./tooltip_controller'
+import Geolocation from'./geolocation_controller'
 application.register('tooltip', Tooltip)
+application.register('geolocation', Geolocation)

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_204_214_005) do
+ActiveRecord::Schema[7.0].define(version: 2026_10_30_000217) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'stations', force: :cascade do |t|
-    t.string 'abbr'
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.jsonb 'response', default: {}
+  create_table "stations", force: :cascade do |t|
+    t.string "abbr"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.jsonb "response", default: {}
+    t.float "latitude"
+    t.float "longitude"
   end
+
 end

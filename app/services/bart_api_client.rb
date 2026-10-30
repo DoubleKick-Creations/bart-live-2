@@ -18,4 +18,15 @@ class BartAPIClient
     )
     HTTParty.get(bart_query_uri)
   end
+
+  # Fetches the full list of BART stations (with lat/long) in a single API call.
+  def self.all_stations
+    bart_query_uri = Addressable::URI.new(
+      scheme: 'https',
+      host: 'api.bart.gov',
+      path: 'api/stn.aspx',
+      query_values: { cmd: 'stns', key: BART_API_KEY, json: 'y' }
+    )
+    HTTParty.get(bart_query_uri)
+  end
 end

@@ -2,7 +2,7 @@
 <br>
 # Welcome to Bart-Live 2.0!
 
-- This is a Rails 7 application using the most current version of Ruby 3, designed for Bay area Bart commuters. The inspiration for this project came from a desire to spend less time waiting for Bart trains and more time on everything else.  I have been able to use it to consistently walk into any Bart Station right as the train was pulling up.
+- This is a Rails 7 application using Ruby 3.2, designed for Bay area Bart commuters. The inspiration for this project came from a desire to spend less time waiting for Bart trains and more time on everything else.  I have been able to use it to consistently walk into any Bart Station right as the train was pulling up.
 - Working on it also helps to keep my coding skills sharp and is giving me the opportunity to more comprehensively learn the front-end solution/libraries that now ship with Rails 7, called Hotwire (Turbo/Stimulus.js), which has been a pleasure to work with.
 - I've been pleasantly surprised by how quickly I was able to practically apply the libraries to real world features, as well as how powerful and performant they are.  I think Turbo/Stimulus may even have the potential to augment React, if not replace it under certain circumstances, but we'll have to wait and see, since these libraries are very new by comparison.
 - The application is being actively development whenever I have spare time. You can check out my progress at https://bart-live-f7cabc1db5b0.herokuapp.com, which will become it's permanent home (HTTPS for this URL is planned).  Once it is further along, I will add/force Godaddy SSL certication, but for now if you prefer a secure connection, just use the first link instead of the second. 

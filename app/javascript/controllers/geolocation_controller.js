@@ -2,6 +2,7 @@ import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
   locate() {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     if (!navigator.geolocation) {
       this.showRedToast()
       return

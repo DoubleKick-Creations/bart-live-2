@@ -171,20 +171,23 @@ RSpec.describe 'Stations', type: :request do
     end
 
     it 'returns West Oakland as the closest station' do
-      get closest_station_path, params: { latitude: 37.805, longitude: -122.295 }, headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
+      get closest_station_path, params: { latitude: 37.805, longitude: -122.295 },
+                                headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
 
       expect(response).to have_http_status(:ok)
       expect(response.body).to include('West Oakland')
     end
 
     it 'returns Millbrae as the closest station' do
-      get closest_station_path, params: { latitude: 37.600, longitude: -122.387 }, headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
+      get closest_station_path, params: { latitude: 37.600, longitude: -122.387 },
+                                headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
 
       expect(response.body).to include('Millbrae')
     end
 
     it 'returns Embarcadero as the closest station' do
-      get closest_station_path, params: { latitude: 37.793, longitude: -122.397 }, headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
+      get closest_station_path, params: { latitude: 37.793, longitude: -122.397 },
+                                headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
 
       expect(response.body).to include('Embarcadero')
     end

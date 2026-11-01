@@ -6,7 +6,7 @@ git_source(:github) { |_repo| "https://github.com/#{repo}.git" }
 ruby '4.0.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.0.4'
+gem 'rails', '~> 7.1.0'
 gem 'minitest', '~> 5.16'
 gem 'json', '~> 2.6'
 
@@ -23,7 +23,7 @@ gem 'addressable', require: 'addressable/uri'
 gem 'httparty'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 6.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
